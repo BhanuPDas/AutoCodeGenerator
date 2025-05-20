@@ -13,14 +13,14 @@ pipeline = transformers.pipeline(
 )
 
 sequences = pipeline(
-    'write java class to add 2 numbers',
+    "[INST] write a Java class to add 2 numbers [/INST]",
     do_sample=True,
     top_k=10,
     temperature=0.1,
     top_p=0.95,
     num_return_sequences=1,
     eos_token_id=tokenizer.eos_token_id,
-    max_length=1000,
+    max_length=500,
 )
 for seq in sequences:
     print(f"Result: {seq['generated_text']}")
