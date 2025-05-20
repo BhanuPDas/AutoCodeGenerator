@@ -1,26 +1,41 @@
 from transformers import AutoTokenizer
 import transformers
 import torch
+from fastapi import FastAPI, HTTPException
+from prompt_request_model import PromptRequest
+from prompt_response_model import PromptResponse
 
+app = FastAPI()
 model = "meta-llama/CodeLlama-13b-Instruct-hf"
 
 tokenizer = AutoTokenizer.from_pretrained(model)
-pipeline = transformers.pipeline(
+generator = transformers.pipeline(
     "text-generation",
     model=model,
     torch_dtype=torch.float16,
     device_map="auto",
 )
 
-sequences = pipeline(
-    "[INST] write a Java class to add 2 numbers [/INST]",
-    do_sample=True,
-    top_k=10,
-    temperature=0.1,
-    top_p=0.95,
-    num_return_sequences=1,
-    eos_token_id=tokenizer.eos_token_id,
-    max_length=500,
-)
-for seq in sequences:
-    print(f"Result: {seq['generated_text']}")
+@app.post("/generate")
+def generate_code(request: PromptRequest):
+    try:
+        formatted_prompt = f"[INST] {request.prompt.strip()} [/INST]"
+        input_ids = tokenizer.encode(formatted_prompt, return_tensors="pt")
+        input_length = input_ids.shape[-1]
+        max_context_length = 4096
+        remaining_length = max_context_length - input_length
+        output_length = min(800, int(remaining_length * 0.9))
+        sequences = generator(
+            formatted_prompt,
+            do_sample=True,
+            top_k=10,
+            temperature=0.1,
+            top_p=0.95,
+             num_return_sequences=1,
+            eos_token_id=tokenizer.eos_token_id,
+            max_length=input_length + output_length,
+        )
+        return PromptResponse(result=sequences[0]["generated_text"])
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
