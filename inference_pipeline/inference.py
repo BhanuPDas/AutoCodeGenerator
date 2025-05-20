@@ -13,7 +13,7 @@ pipeline = transformers.pipeline(
 )
 
 sequences = pipeline(
-    'write java code to add 2 numbers',
+    'write java class to add 2 numbers',
     do_sample=True,
     top_k=10,
     temperature=0.1,
