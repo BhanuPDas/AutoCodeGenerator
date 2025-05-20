@@ -4,6 +4,7 @@ import torch
 from fastapi import FastAPI, HTTPException
 from prompt_request_model import PromptRequest
 from prompt_response_model import PromptResponse
+import time
 
 app = FastAPI()
 model = "meta-llama/CodeLlama-13b-Instruct-hf"
@@ -19,6 +20,7 @@ generator = transformers.pipeline(
 @app.post("/generate")
 def generate_code(request: PromptRequest):
     try:
+        start = time.perf_counter()
         formatted_prompt = f"[INST] {request.prompt.strip()} [/INST]"
         input_ids = tokenizer.encode(formatted_prompt, return_tensors="pt")
         input_length = input_ids.shape[-1]
@@ -35,7 +37,9 @@ def generate_code(request: PromptRequest):
             eos_token_id=tokenizer.eos_token_id,
             max_length=input_length + output_length,
         )
-        return PromptResponse(result=sequences[0]["generated_text"])
+        end = time.perf_counter()
+        execution_time = (end - start) * 1000
+        return PromptResponse(result=sequences[0]["generated_text"],inference_time=round(execution_time, 2))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
