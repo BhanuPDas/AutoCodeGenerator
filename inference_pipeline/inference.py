@@ -26,7 +26,7 @@ def generate_code(request: PromptRequest):
         input_length = input_ids.shape[-1]
         max_context_length = 4096
         remaining_length = max_context_length - input_length
-        output_length = min(800, int(remaining_length * 0.9))
+        output_length = min(1000, int(remaining_length * 0.9))
         sequences = generator(
             formatted_prompt,
             do_sample=True,
