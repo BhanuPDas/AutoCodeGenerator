@@ -33,7 +33,7 @@ def generate_code(request: PromptRequest):
             top_k=10,
             temperature=0.1,
             top_p=0.95,
-             num_return_sequences=1,
+            num_return_sequences=1,
             eos_token_id=tokenizer.eos_token_id,
             max_length=input_length + output_length,
         )
