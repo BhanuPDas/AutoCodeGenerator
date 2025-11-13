@@ -5,10 +5,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/GridLegacy';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import RefreshIcon from '@mui/icons-material/Refresh';
 
 export default function Content() {
     return (
@@ -27,7 +24,8 @@ export default function Content() {
                         <Grid item xs>
                             <TextField
                                 fullWidth
-                                placeholder="Search by email address, phone number, or user UID"
+                                placeholder="Post your questions here."
+                                multiline={true}
                                 InputProps={{
                                     disableUnderline: true,
                                     sx: {fontSize: 'default'},
@@ -37,19 +35,14 @@ export default function Content() {
                         </Grid>
                         <Grid item>
                             <Button variant="contained" sx={{mr: 1}}>
-                                Add user
+                                Query
                             </Button>
-                            <Tooltip title="Reload">
-                                <IconButton>
-                                    <RefreshIcon color="inherit" sx={{display: 'block'}}/>
-                                </IconButton>
-                            </Tooltip>
                         </Grid>
                     </Grid>
                 </Toolbar>
             </AppBar>
             <Typography align="center" sx={{color: 'text.secondary', my: 5, mx: 2}}>
-                No users for this project yet
+                No questions yet
             </Typography>
         </Paper>
     );
