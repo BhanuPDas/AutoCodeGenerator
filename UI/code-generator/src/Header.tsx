@@ -60,7 +60,7 @@ export default function Header(props: HeaderProps) {
                 <Toolbar>
                     <Grid container spacing={1} sx={{alignItems: 'center'}}>
                         <Grid item xs>
-                            <Typography color="inherit" variant="h5" component="h1">
+                            <Typography color="inherit" variant="h3" component="h1">
                                 Code Generator
                             </Typography>
                         </Grid>

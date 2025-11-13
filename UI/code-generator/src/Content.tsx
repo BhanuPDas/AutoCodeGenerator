@@ -6,8 +6,77 @@ import Grid from '@mui/material/GridLegacy';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
+import Box from "@mui/material/Box";
+import {useState, useEffect, useCallback} from "react";
+import axios from "axios";
 
 export default function Content() {
+    const [prompts, setPrompts] = useState<string[]>([]);        // all prompts
+    const [currentIndex, setCurrentIndex] = useState<number>(0); // current prompt index
+    const [currentPrompt, setCurrentPrompt] = useState<string>(""); // current prompt text
+    const [results, setResults] = useState<string[]>([]);       // collected results
+    const [isProcessing, setIsProcessing] = useState<boolean>(false); // API in progress
+    const [autoStart, setAutoStart] = useState(false);
+
+    useEffect(() => {
+        fetch("../question.json")
+            .then(res => res.json())
+            .then((data: { questions: string[] }) => {
+                setPrompts(data.questions);
+                if (data.questions.length > 0) {
+                    setCurrentPrompt(data.questions[0]);
+                }
+            })
+            .catch((error: unknown) => {
+                if (error instanceof Error) console.error(error.message);
+                else console.error("Unknown error:", error);
+            });
+    }, []);
+
+    const sendPrompt = useCallback(async () => {
+        if (currentPrompt === "" || isProcessing) return;
+
+        setIsProcessing(true);
+
+        try {
+            const {data} = await axios.post("http://localhost:4010/query", {
+                prompt: currentPrompt,
+            });
+
+            setResults(prev => [...prev, data.result || JSON.stringify(data)]);
+
+            // move to next prompt
+            setCurrentIndex(prevIndex => {
+                const nextIndex = prevIndex + 1;
+                if (nextIndex < prompts.length) {
+                    setCurrentPrompt(prompts[nextIndex]);
+                    return nextIndex;
+                }
+                return prevIndex; // last prompt, stop chain
+            });
+
+        } catch (error: unknown) {
+            if (error instanceof Error) console.error(error.message);
+            else console.error("Unknown error:", error);
+        } finally {
+            setIsProcessing(false);
+        }
+    }, [currentPrompt, prompts, isProcessing]);
+
+    const handleQueryClick = async () => {
+        setAutoStart(true);      // enable auto-trigger for next prompts
+        await sendPrompt();            // send the first prompt
+    };
+
+    // When currentPrompt changes, automatically call sendPrompt
+    useEffect(() => {
+        if (!autoStart || currentPrompt === "") return;
+
+        (async () => {
+            await sendPrompt();
+        })();
+    }, [currentPrompt, autoStart, sendPrompt]);
+
     return (
         <Paper sx={{maxWidth: 936, margin: 'auto', overflow: 'hidden'}}>
             <AppBar
@@ -26,24 +95,46 @@ export default function Content() {
                                 fullWidth
                                 placeholder="Post your questions here."
                                 multiline={true}
+                                value={`${currentPrompt} : (${currentIndex + 1}/${prompts.length})`}
                                 InputProps={{
                                     disableUnderline: true,
-                                    sx: {fontSize: 'default'},
+                                    sx: {fontSize: '15', color: 'green'},
                                 }}
                                 variant="standard"
                             />
                         </Grid>
                         <Grid item>
-                            <Button variant="contained" sx={{mr: 1}}>
-                                Query
+                            <Button variant="contained" sx={{mr: 1}} onClick={handleQueryClick} disabled={isProcessing}>
+                                {isProcessing ? "Processing..." : "Query"}
                             </Button>
                         </Grid>
                     </Grid>
                 </Toolbar>
             </AppBar>
-            <Typography align="center" sx={{color: 'text.secondary', my: 5, mx: 2}}>
-                No questions yet
-            </Typography>
+            <Box sx={{maxHeight: 400, overflowY: "auto", p: 2, backgroundColor: "#e0e0e0"}}>
+                {results.length === 0 ? (
+                    <Typography align="center" sx={{color: "#4527a0", my: 5, fontSize: '16'}}>
+                        No results yet
+                    </Typography>
+                ) : (
+                    results.map((res, idx) => (
+                        <Typography
+                            key={idx}
+                            sx={{
+                                borderRadius: 1,
+                                p: 1,
+                                my: 1,
+                                whiteSpace: "pre-wrap",
+                                fontFamily: "monospace",
+                                fontSize: "16",
+                                color: "black"
+                            }}
+                        >
+                            {res}
+                        </Typography>
+                    ))
+                )}
+            </Box>
         </Paper>
     );
 }
