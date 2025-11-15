@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import Box from "@mui/material/Box";
-import {useState, useEffect, useCallback} from "react";
+import {useState, useEffect, useCallback, useRef} from "react";
 import axios from "axios";
 
 export default function Content() {
@@ -17,7 +17,9 @@ export default function Content() {
     const [results, setResults] = useState<string[]>([]);
     const [isProcessing, setIsProcessing] = useState<boolean>(false);
     const [autoStart, setAutoStart] = useState(false);
+    const runIdRef = useRef(0);
 
+    // Load questions on mount
     useEffect(() => {
         fetch("../question.json")
             .then(res => res.json())
@@ -27,54 +29,65 @@ export default function Content() {
                     setCurrentPrompt(data.questions[0]);
                 }
             })
-            .catch((error: unknown) => {
-                if (error instanceof Error) console.error(error.message);
-                else console.error("Unknown error:", error);
-            });
+            .catch(err => console.error(err));
     }, []);
 
     const sendPrompt = useCallback(async () => {
         if (currentPrompt === "" || isProcessing) return;
-
         setIsProcessing(true);
-
+        const thisRunId = runIdRef.current;
         try {
-            const {data} = await axios.post("http://localhost:4010/query", {
-                prompt: currentPrompt,
-            });
+            const {data} = await axios.post(
+                "http://localhost:4010/api/query",
+                {prompt: currentPrompt},
+                {headers: {"Content-Type": "application/json"}}
+            );
 
+            // Cancel outdated runs
+            if (thisRunId !== runIdRef.current) return;
+
+            // Append result
             setResults(prev => [...prev, data.result || JSON.stringify(data)]);
 
-
+            // Move to next prompt
             setCurrentIndex(prevIndex => {
+                if (thisRunId !== runIdRef.current) return prevIndex;
                 const nextIndex = prevIndex + 1;
                 if (nextIndex < prompts.length) {
                     setCurrentPrompt(prompts[nextIndex]);
                     return nextIndex;
                 }
+
+                // End of chain
+                setAutoStart(false);
+                setCurrentPrompt("");
                 return prevIndex;
             });
-
-        } catch (error: unknown) {
-            if (error instanceof Error) console.error(error.message);
-            else console.error("Unknown error:", error);
+        } catch (err) {
+            console.error(err);
         } finally {
-            setIsProcessing(false);
+            // Cancel outdated runs
+            if (thisRunId === runIdRef.current) {
+                setIsProcessing(false);
+            }
         }
     }, [currentPrompt, prompts, isProcessing]);
 
     const handleQueryClick = async () => {
+        runIdRef.current += 1;   // cancel all old runs
+        setResults([]);
+        setCurrentIndex(0);
         setAutoStart(true);
         await sendPrompt();
     };
 
-    // When currentPrompt changes, automatically call sendPrompt
+    // Auto-processing when prompt changes
     useEffect(() => {
         if (!autoStart || currentPrompt === "") return;
-
         (async () => {
             await sendPrompt();
         })();
+
     }, [currentPrompt, autoStart, sendPrompt]);
 
     return (
@@ -95,7 +108,9 @@ export default function Content() {
                                 fullWidth
                                 placeholder="Post your questions here."
                                 multiline={true}
-                                value={`${currentPrompt} : (${currentIndex + 1}/${prompts.length})`}
+                                value={currentPrompt
+                                    ? `${currentPrompt} : (${currentIndex + 1}/${prompts.length})`
+                                    : ""}
                                 InputProps={{
                                     disableUnderline: true,
                                     sx: {fontSize: '15', color: 'green'},
@@ -111,7 +126,7 @@ export default function Content() {
                     </Grid>
                 </Toolbar>
             </AppBar>
-            <Box sx={{maxHeight: 400, overflowY: "auto", p: 2, backgroundColor: "#e0e0e0"}}>
+            <Box sx={{maxHeight: 900, overflowY: "auto", p: 2, backgroundColor: "#e0e0e0"}}>
                 {results.length === 0 ? (
                     <Typography align="center" sx={{color: "#4527a0", my: 5, fontSize: '16'}}>
                         No results yet

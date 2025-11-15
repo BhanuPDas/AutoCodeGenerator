@@ -1,15 +1,18 @@
 package de.fhdortmund.codegenerator.api;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import de.fhdortmund.codegenerator.requests.Prompts;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
+@CrossOrigin(origins = "http://localhost:5173/")
+@RequestMapping("/api")
 public class CodeGeneratorController {
+    private int rNo = 0;
 
     @PostMapping("/query")
-    public void query() {
-
+    public ResponseEntity<String> query(@RequestBody Prompts prompt) {
+        System.out.println("Request received: " + prompt.getPrompt());
+        return ResponseEntity.ok("Hello" + (++rNo));
     }
 }
