@@ -11,11 +11,11 @@ import {useState, useEffect, useCallback} from "react";
 import axios from "axios";
 
 export default function Content() {
-    const [prompts, setPrompts] = useState<string[]>([]);        // all prompts
-    const [currentIndex, setCurrentIndex] = useState<number>(0); // current prompt index
-    const [currentPrompt, setCurrentPrompt] = useState<string>(""); // current prompt text
-    const [results, setResults] = useState<string[]>([]);       // collected results
-    const [isProcessing, setIsProcessing] = useState<boolean>(false); // API in progress
+    const [prompts, setPrompts] = useState<string[]>([]);
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [currentPrompt, setCurrentPrompt] = useState<string>("");
+    const [results, setResults] = useState<string[]>([]);
+    const [isProcessing, setIsProcessing] = useState<boolean>(false);
     const [autoStart, setAutoStart] = useState(false);
 
     useEffect(() => {
@@ -45,14 +45,14 @@ export default function Content() {
 
             setResults(prev => [...prev, data.result || JSON.stringify(data)]);
 
-            // move to next prompt
+
             setCurrentIndex(prevIndex => {
                 const nextIndex = prevIndex + 1;
                 if (nextIndex < prompts.length) {
                     setCurrentPrompt(prompts[nextIndex]);
                     return nextIndex;
                 }
-                return prevIndex; // last prompt, stop chain
+                return prevIndex;
             });
 
         } catch (error: unknown) {
@@ -64,8 +64,8 @@ export default function Content() {
     }, [currentPrompt, prompts, isProcessing]);
 
     const handleQueryClick = async () => {
-        setAutoStart(true);      // enable auto-trigger for next prompts
-        await sendPrompt();            // send the first prompt
+        setAutoStart(true);
+        await sendPrompt();
     };
 
     // When currentPrompt changes, automatically call sendPrompt

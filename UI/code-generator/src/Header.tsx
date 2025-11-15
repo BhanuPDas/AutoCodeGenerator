@@ -61,7 +61,7 @@ export default function Header(props: HeaderProps) {
                     <Grid container spacing={1} sx={{alignItems: 'center'}}>
                         <Grid item xs>
                             <Typography color="inherit" variant="h3" component="h1">
-                                Code Generator
+                                Query & Build
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -77,8 +77,6 @@ export default function Header(props: HeaderProps) {
             <AppBar component="div" position="static" elevation={0} sx={{zIndex: 0}}>
                 <Tabs value={0} textColor="inherit">
                     <Tab label="Code"/>
-                    <Tab label="Refactor"/>
-                    <Tab label="Fix Bug"/>
                 </Tabs>
             </AppBar>
         </React.Fragment>

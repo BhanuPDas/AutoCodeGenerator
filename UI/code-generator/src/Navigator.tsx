@@ -43,7 +43,7 @@ export default function Navigator(props: DrawerProps) {
         <Drawer variant="permanent" {...other}>
             <List disablePadding>
                 <ListItem sx={{...item, ...itemCategory, fontSize: 22, color: '#fff'}}>
-                    Features
+                    Code Generator
                 </ListItem>
                 <ListItem sx={{...item, ...itemCategory}}>
                     <ListItemIcon>
