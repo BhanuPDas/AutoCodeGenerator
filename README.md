@@ -1,2 +1,2 @@
 # AutoCodeGenerator
-Repository for code generation , code review and code refactor
+Repository contains UI, Intermediate service, AI service and other configurations for code generator project.
