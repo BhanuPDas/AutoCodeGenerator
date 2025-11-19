@@ -2,6 +2,7 @@ package de.fhdortmund.codegenerator.service;
 
 import de.fhdortmund.codegenerator.requests.InferenceRequest;
 import de.fhdortmund.codegenerator.response.InferenceResponse;
+import de.fhdortmund.codegenerator.util.GenerateMetrics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,8 @@ public class InferenceService {
     private String inferenceUrl;
     @Autowired
     private RestTemplate rest;
+    @Autowired
+    private GenerateMetrics metrics;
 
     public String fetchInference(String prompt) {
         logger.info("Preparing request for inference for: {}", prompt);
@@ -50,6 +53,7 @@ public class InferenceService {
                 float totalMem = response.getBody().getTotalMem();
                 logger.info("Inference response is: {} \n Inference time: {} \n Tokens per sec: {} \n No of Tokens generated: {} \n GPU%: {} \n Mem%: {} \n Mem Used: {} \n Total Mem: {}",
                         result, inferenceTime, tpms, nTokens, gpuUtil, memUtil, memUsed, totalMem);
+                metrics.updateMetrics(latency, inferenceTime, tpms, nTokens, gpuUtil, memUtil, memUsed, totalMem);
                 return response.getBody().getResult();
             }
         } catch (Exception e) {
