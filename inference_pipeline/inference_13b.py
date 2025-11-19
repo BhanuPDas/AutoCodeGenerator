@@ -91,7 +91,7 @@ def generate_code(request: PromptRequest):
         gen_ids = outputs[0][inputs["input_ids"].shape[-1]:]
         result = tokenizer.decode(outputs[0], skip_special_tokens=True)
         end = time.perf_counter()
-        execution_time = (end - start) * 1000
+        execution_time = (end - start)
         num_tokens = len(gen_ids)
 
         # token per ms
