@@ -38,7 +38,7 @@ export default function Content() {
         const thisRunId = runIdRef.current;
         try {
             const {data} = await axios.post(
-                "http://localhost:4010/api/query",
+                "http://172.17.0.1:4010/api/query",
                 {prompt: currentPrompt},
                 {headers: {"Content-Type": "application/json"}}
             );
