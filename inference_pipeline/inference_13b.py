@@ -13,7 +13,7 @@ model = "meta-llama/CodeLlama-13b-Instruct-hf"
 tokenizer = AutoTokenizer.from_pretrained(model)
 llm = AutoModelForCausalLM.from_pretrained(
     model,
-    torch_dtype=torch.float16,
+    dtype=torch.float16,
     device_map="auto"
 )
 
