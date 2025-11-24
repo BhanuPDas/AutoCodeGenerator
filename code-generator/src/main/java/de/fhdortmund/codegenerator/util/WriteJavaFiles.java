@@ -25,7 +25,7 @@ public class WriteJavaFiles {
         this.baseDir = Paths.get(PATH);
     }
 
-    public Path saveFormattedJavaFile(String rawCode) throws IOException, FormatterException {
+    public String saveFormattedJavaFile(String rawCode) throws IOException, FormatterException {
         logger.info("Checking if the directory exists: {}", PATH);
         ensureDirectoryExists(baseDir);
         Formatter formatter = new Formatter();
@@ -34,8 +34,8 @@ public class WriteJavaFiles {
         String fileName = generateUniqueFileName();
         Path filePath = baseDir.resolve(fileName);
         Files.writeString(filePath, formattedCode);
-
-        return filePath;
+        logger.info("Java Code written to: {}", filePath.toAbsolutePath().toString());
+        return formattedCode;
     }
 
     private void ensureDirectoryExists(Path dir) throws IOException {

@@ -12,4 +12,4 @@ FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 4010
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED", "-jar", "app.jar"]

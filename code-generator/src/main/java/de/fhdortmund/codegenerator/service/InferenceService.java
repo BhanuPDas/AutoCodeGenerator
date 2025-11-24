@@ -16,7 +16,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import java.nio.file.Path;
 import java.time.Duration;
 import java.time.Instant;
 
@@ -59,12 +58,10 @@ public class InferenceService {
                 float memUtil = response.getBody().getMemUtil();
                 float memUsed = response.getBody().getMemUsed();
                 float totalMem = response.getBody().getTotalMem();
-                logger.info("Inference response is: {} \n Inference time: {} \n Tokens per sec: {} \n No of Tokens generated: {} \n GPU%: {} \n Mem%: {} \n Mem Used: {} \n Total Mem: {}",
+                logger.info("Inference response is: {} \n Inference time: {} \n Tokens per sec: {} \n No of Tokens generated: {} \n GPU Util%: {} \n Mem Engine Util%: {} \n Mem Used: {} \n Total Mem: {}",
                         result, inferenceTime, tpms, nTokens, gpuUtil, memUtil, memUsed, totalMem);
                 metrics.updateMetrics(latency, inferenceTime, tpms, nTokens, gpuUtil, memUtil, memUsed, totalMem);
-                Path file = jfiles.saveFormattedJavaFile(result);
-                logger.info("Java code has been saved to file: {}", file.toAbsolutePath().toString());
-                return response.getBody().getResult();
+                return (jfiles.saveFormattedJavaFile(result));
             }
         } catch (Exception e) {
             logger.error("{} Error while fetching inference data for the prompt: {}", e.getMessage(), prompt);
