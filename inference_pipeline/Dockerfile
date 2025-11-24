@@ -19,7 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --upgrade huggingface_hub
 ARG HF_TOKEN
 ENV HF_TOKEN=${HF_TOKEN}
-RUN python -c 'from huggingface_hub import login; login(token=os.getenv("HF_TOKEN"))'
+RUN python -c 'from huggingface_hub import login; import os; login(token=os.getenv("HF_TOKEN"))'
 
 COPY . .
 
