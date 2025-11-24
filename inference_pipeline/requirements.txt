@@ -1,8 +1,8 @@
 fastapi
 uvicorn
-transformers==4.45.2
+transformers>=4.48.0
 huggingface-hub==1.1.5
-accelerate==0.33.0
+accelerate>=0.33.0
 pynvml
 sentencepiece
-protobuf==4.25.3
+protobuf>=4.25.3
