@@ -17,4 +17,4 @@ ENTRYPOINT ["java",
 "--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
 "--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
 "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
-"-jar","app.jar"]
+"-jar", "app.jar"]
