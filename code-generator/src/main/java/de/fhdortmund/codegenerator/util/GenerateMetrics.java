@@ -31,7 +31,7 @@ public class GenerateMetrics implements MeterBinder {
 
     }
 
-    public void updateMetrics(long latency, float inferenceTime, float tpms, float nTokens,  float gpuUtil, float memUtil, float memUsed, float totalMem) {
+    public void updateMetrics(long latency, float inferenceTime, float tpms, float nTokens, float gpuUtil, float memUtil, float memUsed, float totalMem) {
         this.latency = latency;
         this.inferenceTime = inferenceTime;
         this.tpms = tpms;

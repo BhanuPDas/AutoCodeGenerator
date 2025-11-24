@@ -11,13 +11,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @RestController
-@CrossOrigin(origins = "http://172.17.0.1:5173/")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class CodeGeneratorController {
 
+    private final InferenceService inferenceService;
     Logger logger = LogManager.getLogger(CodeGeneratorController.class);
+
     @Autowired
-    private InferenceService inferenceService;
+    public CodeGeneratorController(InferenceService inferenceService) {
+        this.inferenceService = inferenceService;
+    }
 
     @PostMapping("/query")
     public ResponseEntity<String> query(@Valid @NotNull @RequestBody Prompts prompt) {
