@@ -16,6 +16,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cu124
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade huggingface_hub
+ARG HF_TOKEN
+ENV HF_TOKEN=${HF_TOKEN}
+RUN python -c 'from huggingface_hub import login; login(token=os.getenv("HF_TOKEN"))'
 
 COPY . .
 

@@ -10,7 +10,7 @@ import threading
 app = FastAPI()
 model = "meta-llama/CodeLlama-13b-Instruct-hf"
 
-tokenizer = AutoTokenizer.from_pretrained(model, use_auth_token="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")
+tokenizer = AutoTokenizer.from_pretrained(model)
 llm = AutoModelForCausalLM.from_pretrained(
     model,
     torch_dtype=torch.float16,
