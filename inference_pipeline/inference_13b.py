@@ -24,7 +24,7 @@ def measure_request_gpu(func):
     and return it alongside inference result.
     """
 
-    def wrapper(*args, **kwargs):
+    def wrapper(request: PromptRequest):
         usage_log = []
         state = {"monitoring": True}
 
@@ -38,7 +38,7 @@ def measure_request_gpu(func):
         t.start()
 
         # Call the actual inference function
-        result, execution_time, tpms, num_tokens = func(*args, **kwargs)
+        result, execution_time, tpms, num_tokens = func(request)
 
         # Stop monitoring
         state["monitoring"] = False
