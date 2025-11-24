@@ -1,3 +1,5 @@
+from functools import wraps
+
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 from fastapi import FastAPI, HTTPException
@@ -24,6 +26,7 @@ def measure_request_gpu(func):
     and return it alongside inference result.
     """
 
+    @wraps(func)
     def wrapper(request: PromptRequest):
         usage_log = []
         state = {"monitoring": True}
