@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface InferenceRepository extends JpaRepository<InferenceEntity, Long> {
-    List<InferenceEntity> findBySendToUiEqualsIgnoreCase(String sendToUi);
+    List<InferenceEntity> findBySentToUiEqualsIgnoreCase(String sentToUi);
 }

@@ -58,10 +58,10 @@ public class InferenceService {
     public List<String> fetchFromDB() {
         List<String> results = new ArrayList<>();
         try {
-            List<InferenceEntity> resEntity = irepo.findBySendToUiEqualsIgnoreCase("no");
+            List<InferenceEntity> resEntity = irepo.findBySentToUiEqualsIgnoreCase("No");
             for (InferenceEntity inferenceEntity : resEntity) {
                 results.add(inferenceEntity.getResult());
-                inferenceEntity.setSendToUi("yes");
+                inferenceEntity.setSentToUi("Yes");
             }
             irepo.saveAll(resEntity);
 

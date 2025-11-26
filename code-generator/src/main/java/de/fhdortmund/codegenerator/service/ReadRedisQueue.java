@@ -95,7 +95,7 @@ public class ReadRedisQueue implements Runnable {
                             iEntity.setMsgId(messageId.toString());
                             iEntity.setPrompt(prompt);
                             iEntity.setResult(result);
-                            iEntity.setSendToUi("no");
+                            iEntity.setSentToUi("No");
                             iEntityList.add(iEntity);
                         }
 

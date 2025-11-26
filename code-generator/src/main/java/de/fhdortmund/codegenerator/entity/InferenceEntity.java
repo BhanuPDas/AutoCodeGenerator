@@ -20,6 +20,6 @@ public class InferenceEntity {
     private String prompt;
     @Column(name = "inf_resp")
     private String result;
-    @Column(name = "send_to_ui")
-    private String sendToUi;
+    @Column(name = "sent_to_ui")
+    private String sentToUi;
 }
