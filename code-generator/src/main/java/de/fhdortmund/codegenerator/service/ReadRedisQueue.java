@@ -97,13 +97,13 @@ public class ReadRedisQueue implements Runnable {
                             iEntity.setResult(result);
                             iEntity.setSendToUi("no");
                             iEntityList.add(iEntity);
-                            saveResultInDB(iEntityList);
                         }
 
                         jedis.xack(streamKey, groupName, messageId);
                     }
                 }
             }
+            saveResultInDB(iEntityList);
         } catch (Exception e) {
             logger.error("Error while fetching the prompt: {}", e.getMessage());
         }
