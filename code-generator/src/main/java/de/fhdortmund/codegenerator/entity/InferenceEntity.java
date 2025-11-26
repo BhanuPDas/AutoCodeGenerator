@@ -13,7 +13,8 @@ import lombok.NoArgsConstructor;
 public class InferenceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private Integer id;
     @Column(name = "msg_id")
     private String msgId;
     @Column(name = "inf_req")
