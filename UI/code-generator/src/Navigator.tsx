@@ -8,15 +8,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
-import TimerIcon from '@mui/icons-material/Timer';
-import SettingsIcon from '@mui/icons-material/Settings';
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import DocumentScannerTwoToneIcon from '@mui/icons-material/DocumentScannerTwoTone';
 
 const categories = [
     {
-        id: 'Quality',
+        id: 'Actions',
         children: [
-            {id: 'Analytics', icon: <SettingsIcon/>, active: false},
-            {id: 'Performance', icon: <TimerIcon/>, active: false},
+            {id: 'Results', icon: <DocumentScannerTwoToneIcon/>, active: false},
+            {id: 'Performance', icon: <QueryStatsIcon/>, active: false},
         ],
     }
 ];
@@ -36,8 +36,11 @@ const itemCategory = {
     px: 3,
 };
 
-export default function Navigator(props: DrawerProps) {
-    const {...other} = props;
+interface NavigatorProps extends DrawerProps {
+    onSelectPage: (page: string) => void;
+}
+
+export default function Navigator({ onSelectPage, ...other }: NavigatorProps) {
 
     return (
         <Drawer variant="permanent" {...other}>
@@ -49,7 +52,7 @@ export default function Navigator(props: DrawerProps) {
                     <ListItemIcon>
                         <HomeIcon/>
                     </ListItemIcon>
-                    <ListItemText>Home</ListItemText>
+                    <ListItemText onClick={() => onSelectPage("home")}>Home</ListItemText>
                 </ListItem>
                 {categories.map(({id, children}) => (
                     <Box key={id} sx={{bgcolor: '#101F33'}}>
@@ -58,7 +61,7 @@ export default function Navigator(props: DrawerProps) {
                         </ListItem>
                         {children.map(({id: childId, icon, active}) => (
                             <ListItem disablePadding key={childId}>
-                                <ListItemButton selected={active} sx={item}>
+                                <ListItemButton selected={active} sx={item} onClick={() => onSelectPage(childId)}>
                                     <ListItemIcon>{icon}</ListItemIcon>
                                     <ListItemText>{childId}</ListItemText>
                                 </ListItemButton>

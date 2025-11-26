@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -6,6 +5,8 @@ import Box from '@mui/material/Box';
 import Navigator from './Navigator';
 import Content from './Content';
 import Header from './Header';
+import Results from "./Results";
+import {useState, useEffect} from "react";
 
 let theme = createTheme({
     palette: {
@@ -152,12 +153,20 @@ theme = {
 
 const drawerWidth = 256;
 export default function App() {
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
     const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
+    const [selectedPage, setSelectedPage] = useState("");
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    useEffect(() => {
+        if (selectedPage === "Performance") {
+            window.open("http://172.22.174.173:3000", "_blank");
+        }
+    }, [selectedPage]);
+
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{display: 'flex', minHeight: '100vh'}}>
@@ -171,18 +180,19 @@ export default function App() {
                             PaperProps={{style: {width: drawerWidth}}}
                             variant="temporary"
                             open={mobileOpen}
-                            onClose={handleDrawerToggle}
-                        />
+                            onClose={handleDrawerToggle} onSelectPage={setSelectedPage}/>
                     )}
                     <Navigator
                         PaperProps={{style: {width: drawerWidth}}}
-                        sx={{display: {sm: 'block', xs: 'none'}}}
+                        sx={{display: {sm: 'block', xs: 'none'}}} onSelectPage={setSelectedPage}
                     />
                 </Box>
                 <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', width: '1220px'}}>
                     <Header onDrawerToggle={handleDrawerToggle}/>
                     <Box component="main" sx={{flex: 1, py: 6, px: 4, bgcolor: '#eaeff1'}}>
-                        <Content/>
+                        {selectedPage === "Results" ? (
+                            <Results/>
+                        ) : selectedPage === "Performance" ? null : (<Content/>)}
                     </Box>
                 </Box>
             </Box>
