@@ -5,7 +5,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 import com.google.googlejavaformat.java.Formatter;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Files;
@@ -25,17 +26,21 @@ public class WriteJavaFiles {
         this.baseDir = Paths.get(PATH);
     }
 
-    public String saveFormattedJavaFile(String rawCode) throws IOException, FormatterException {
+    public void saveFormattedJavaFile(String rawCode) throws IOException, FormatterException {
         logger.info("Checking if the directory exists: {}", PATH);
         ensureDirectoryExists(baseDir);
         Formatter formatter = new Formatter();
         logger.info("Formatting the file as Java code: {}", rawCode);
-        String formattedCode = formatter.formatSource(rawCode);
-        String fileName = generateUniqueFileName();
-        Path filePath = baseDir.resolve(fileName);
-        Files.writeString(filePath, formattedCode);
-        logger.info("Java Code written to: {}", filePath.toAbsolutePath().toString());
-        return formattedCode;
+        String extCode = extractCode(rawCode);
+        if(!extCode.isBlank()) {
+            String formattedCode = formatter.formatSource(extCode);
+            String fileName = generateUniqueFileName();
+            Path filePath = baseDir.resolve(fileName);
+            Files.writeString(filePath, formattedCode);
+            logger.info("Java Code written to: {}", filePath.toAbsolutePath().toString());
+        } else {
+            logger.error("No code found in response to write to a file");
+        }
     }
 
     private void ensureDirectoryExists(Path dir) throws IOException {
@@ -49,5 +54,16 @@ public class WriteJavaFiles {
                 .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
         String random = UUID.randomUUID().toString().replace("-", "").substring(0, 8);
         return "Generated_" + timestamp + "_" + random + ".java";
+    }
+
+    private String extractCode(String code) {
+        Pattern pattern = Pattern.compile("```(.*?)```", Pattern.DOTALL);
+        Matcher matcher = pattern.matcher(code);
+        if (matcher.find()) {
+            String extCode = matcher.group(1).trim();
+            logger.info("Code is extracted from the text: {}", extCode);
+            return extCode;
+        }
+        return "";
     }
 }

@@ -10,7 +10,7 @@ import io.micrometer.common.lang.NonNull;
 @Getter
 public class GenerateMetrics implements MeterBinder {
 
-    private volatile long latency;
+    private volatile double latency;
     private volatile float inferenceTime;
     private volatile float tpms;
     private volatile float nTokens;
@@ -25,13 +25,13 @@ public class GenerateMetrics implements MeterBinder {
         registry.gauge("tokenPerSec", this, GenerateMetrics::getTpms);
         registry.gauge("NumTokens", this, GenerateMetrics::getNTokens);
         registry.gauge("gpuUtilization", this, GenerateMetrics::getGpuUtil);
-        registry.gauge("memUtilization", this, GenerateMetrics::getMemUtil);
-        registry.gauge("memUsed", this, GenerateMetrics::getMemUsed);
-        registry.gauge("TotalMemory", this, GenerateMetrics::getTotalMem);
+        registry.gauge("gpuEngUtilization", this, GenerateMetrics::getMemUtil);
+        registry.gauge("gpuMemUsed", this, GenerateMetrics::getMemUsed);
+        registry.gauge("totalGpuMemory", this, GenerateMetrics::getTotalMem);
 
     }
 
-    public void updateMetrics(long latency, float inferenceTime, float tpms, float nTokens, float gpuUtil, float memUtil, float memUsed, float totalMem) {
+    public void updateMetrics(double latency, float inferenceTime, float tpms, float nTokens, float gpuUtil, float memUtil, float memUsed, float totalMem) {
         this.latency = latency;
         this.inferenceTime = inferenceTime;
         this.tpms = tpms;
