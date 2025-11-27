@@ -29,7 +29,7 @@ export default function Results() {
     return (
         <Paper sx={{maxWidth: 1024, margin: 'auto', overflow: 'hidden'}}>
             <Box sx={{maxHeight: 1024, overflowY: "auto", p: 2, backgroundColor: "#e0e0e0"}}>
-                {results.length === 0 ? (
+                {!results || results.length === 0 ? (
                     <Typography align="center" sx={{color: "#4527a0", my: 5, fontSize: '16'}}>
                         No results yet. Please try again after sometime.
                     </Typography>
