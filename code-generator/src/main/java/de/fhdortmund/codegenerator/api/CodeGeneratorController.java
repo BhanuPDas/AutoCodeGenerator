@@ -33,7 +33,7 @@ public class CodeGeneratorController {
         logger.info("Request received: {}", prompt.getPrompt());
         String msgId = inferenceService.addToQueue(prompt.getPrompt());
         if (!msgId.isBlank()) {
-            return ResponseEntity.ok("Request: " + prompt.getPrompt() + "is added to the queue: " + msgId + "to process.");
+            return ResponseEntity.ok("Request: " + prompt.getPrompt() + " is added to the queue: " + msgId + " to process.");
         }
         return ResponseEntity.ok("Request is not processed: " + prompt.getPrompt());
     }
