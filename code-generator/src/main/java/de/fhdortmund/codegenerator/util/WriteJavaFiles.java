@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 import com.google.googlejavaformat.java.Formatter;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
@@ -32,7 +33,7 @@ public class WriteJavaFiles {
         Formatter formatter = new Formatter();
         logger.info("Formatting the file as Java code: {}", rawCode);
         String extCode = extractCode(rawCode);
-        if(!extCode.isBlank()) {
+        if (!extCode.isBlank()) {
             String formattedCode = formatter.formatSource(extCode);
             String fileName = generateUniqueFileName();
             Path filePath = baseDir.resolve(fileName);
@@ -63,6 +64,19 @@ public class WriteJavaFiles {
             String extCode = matcher.group(1).trim();
             logger.info("Code is extracted from the text: {}", extCode);
             return extCode;
+        } else {
+            int startIdx = code.indexOf("package ");
+            if (startIdx < 0) {
+                startIdx = code.indexOf("public class ");
+            }
+            if (startIdx >= 0) {
+                int endIdx = code.lastIndexOf("}");
+                if (endIdx >= 0 && endIdx >= startIdx) {
+                    String extCode = code.substring(startIdx, endIdx + 1).trim();
+                    logger.info("Code extracted from response: {}", extCode);
+                    return extCode;
+                }
+            }
         }
         return "";
     }
