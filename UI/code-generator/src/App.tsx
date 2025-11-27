@@ -163,7 +163,7 @@ export default function App() {
 
     useEffect(() => {
         if (selectedPage === "Performance") {
-            window.open("http://172.22.174.173:3000", "_blank");
+            window.open("http://172.22.174.173:3000/d/adl7s88/java-llama?orgId=1&from=now-6h&to=now&timezone=browser", "_blank");
         }
     }, [selectedPage]);
 
