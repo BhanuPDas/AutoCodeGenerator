@@ -87,7 +87,7 @@ public class InferenceService {
             ExecutorService service = Executors.newSingleThreadExecutor();
             service.submit(new ReadRedisQueue(jedis, groupName, consumer, streamKey, inferenceUrl, rest, metrics, jfiles, irepo));
         } catch (Exception ex) {
-            logger.error("Exception occcurred while creating a thread to read from redis: {}", ex.getMessage());
+            logger.error("Exception occurred while creating a thread to read from redis: {}", ex.getMessage());
         }
     }
 }

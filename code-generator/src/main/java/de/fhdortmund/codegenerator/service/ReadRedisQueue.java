@@ -54,7 +54,7 @@ public class ReadRedisQueue implements Runnable {
         try {
             XReadGroupParams params = new XReadGroupParams().count(100).block(5000);
             Map<String, StreamEntryID> mID = new HashMap<>();
-            mID.put(streamKey, StreamEntryID.NEW_ENTRY);
+            mID.put(streamKey, new StreamEntryID(">"));
             List<Map.Entry<String, List<StreamEntry>>> records = jedis.xreadGroup(groupName, consumer, params, mID);
             List<InferenceEntity> iEntityList = new ArrayList<>();
             if (records != null) {
