@@ -14,7 +14,8 @@ tokenizer = AutoTokenizer.from_pretrained(model)
 llm = AutoModelForCausalLM.from_pretrained(
     model,
     dtype=torch.float16,
-    device_map="auto"
+    device_map={"": "cuda:0"},
+    low_cpu_mem_usage=False
 )
 
 
