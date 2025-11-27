@@ -34,7 +34,7 @@ def generate_code(request: PromptRequest):
 
     try:
         start = time.perf_counter()
-        formatted_prompt = f"[INST] {request.prompt.strip()} [/INST]"
+        formatted_prompt = f"Task: {request.prompt.strip()}"
         inputs = tokenizer(formatted_prompt, return_tensors="pt").to(llm.device)
         input_length = inputs["input_ids"].shape[-1]
         max_context_length = 4096
