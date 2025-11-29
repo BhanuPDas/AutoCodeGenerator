@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llama-inference
+  labels:
+    app: llama-inference
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llama-inference
+  template:
+    metadata:
+      labels:
+        app: llama-inference
+    spec:
+      containers:
+        - name: llama-inference
+          image: bhanupdas/llama-inference:latest
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: llama-inference-secret
+          ports:
+            - containerPort: 5050
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+      imagePullSecrets: 
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: llama-inference
+spec:
+  selector:
+    app: llama-inference
+  ports:
+    - name: http
+      protocol: TCP
+      port: 5050
+      targetPort: 5050
+      nodePort: 32501
+  sessionAffinity: None
+  type: NodePort
+
