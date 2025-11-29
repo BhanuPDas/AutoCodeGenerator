@@ -18,9 +18,6 @@ spec:
         - name: llama-inference
           image: bhanupdas/llama-inference:latest
           imagePullPolicy: Always
-          envFrom:
-            - secretRef:
-                name: llama-inference-secret
           ports:
             - containerPort: 5050
           env:
