@@ -11,22 +11,24 @@ import {useState, useEffect, useCallback, useRef} from "react";
 import axios from "axios";
 
 export default function Content() {
-    const [prompts, setPrompts] = useState<string[]>([]);
+    const [prompts, setPrompts] = useState<{ id: string; question: string }[]>([]);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [currentPrompt, setCurrentPrompt] = useState<string>("");
     const [results, setResults] = useState<string[]>([]);
     const [isProcessing, setIsProcessing] = useState<boolean>(false);
     const [autoStart, setAutoStart] = useState(false);
     const runIdRef = useRef(0);
+    const [id, setId] = useState<number>(0);
 
     // Load questions on mount
     useEffect(() => {
         fetch("../question.json")
             .then(res => res.json())
-            .then((data: { questions: string[] }) => {
-                setPrompts(data.questions);
-                if (data.questions.length > 0) {
-                    setCurrentPrompt(data.questions[0]);
+            .then((data: { id: string; question: string }[]) => {
+                setPrompts(data);
+                if (data.length > 0) {
+                    setCurrentPrompt(data[0].question);
+                    setId(parseInt(data[0].id, 10));
                 }
             })
             .catch(err => console.error(err));
@@ -39,7 +41,7 @@ export default function Content() {
         try {
             const {data} = await axios.post(
                 "http://172.22.174.173:4010/api/process-request",
-                {prompt: currentPrompt},
+                {id: id, prompt: currentPrompt},
                 {headers: {"Content-Type": "application/json"}}
             );
 
@@ -54,7 +56,8 @@ export default function Content() {
                 if (thisRunId !== runIdRef.current) return prevIndex;
                 const nextIndex = prevIndex + 1;
                 if (nextIndex < prompts.length) {
-                    setCurrentPrompt(prompts[nextIndex]);
+                    setCurrentPrompt(prompts[nextIndex].question);
+                    setId(parseInt(prompts[nextIndex].id, 10));
                     return nextIndex;
                 }
 
@@ -71,7 +74,7 @@ export default function Content() {
                 setIsProcessing(false);
             }
         }
-    }, [currentPrompt, prompts, isProcessing]);
+    }, [currentPrompt, isProcessing, id, prompts]);
 
     const handleQueryClick = async () => {
         runIdRef.current += 1;   // cancel all old runs

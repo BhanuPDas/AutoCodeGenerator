@@ -1,0 +1,1756 @@
+[
+  {
+    "id": 1,
+    "functionName": "secondLargest",
+    "tests": [
+      {
+        "input": [
+          1,
+          5,
+          3,
+          9,
+          7
+        ],
+        "expected": 7
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "functionName": "intersection",
+    "tests": [
+      {
+        "input1": [
+          1,
+          2,
+          3
+        ],
+        "input2": [
+          2,
+          3,
+          4
+        ],
+        "expected": [
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "functionName": "mergeSortedInPlace",
+    "tests": [
+      {
+        "input1": [
+          1,
+          3,
+          5
+        ],
+        "input2": [
+          2,
+          4,
+          6
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "functionName": "missingNumber",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "functionName": "countPairsWithSum",
+    "tests": [
+      {
+        "input": [
+          1,
+          5,
+          7,
+          -1,
+          5
+        ],
+        "target": 6,
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "functionName": "moveZerosToEnd",
+    "tests": [
+      {
+        "input": [
+          0,
+          1,
+          0,
+          3,
+          12
+        ],
+        "expected": [
+          1,
+          3,
+          12,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "functionName": "rotateArrayRight",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "k": 2,
+        "expected": [
+          4,
+          5,
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "functionName": "subarraysWithSum",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          2
+        ],
+        "target": 5,
+        "expected": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "functionName": "binarySearch",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "target": 4,
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "functionName": "mergeSort",
+    "tests": [
+      {
+        "input": [
+          5,
+          2,
+          4,
+          6,
+          1,
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "functionName": "quickSort",
+    "tests": [
+      {
+        "input": [
+          10,
+          7,
+          8,
+          9,
+          1,
+          5
+        ],
+        "expected": [
+          1,
+          5,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "functionName": "kthSmallest",
+    "tests": [
+      {
+        "input": [
+          7,
+          10,
+          4,
+          3,
+          20,
+          15
+        ],
+        "k": 3,
+        "expected": 7
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "functionName": "majorityElement",
+    "tests": [
+      {
+        "input": [
+          3,
+          3,
+          4,
+          2,
+          3
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "functionName": "findDuplicates",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          1,
+          3,
+          4
+        ],
+        "expected": [
+          1,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "functionName": "mergeIntervals",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            15,
+            18
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            6
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            15,
+            18
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "functionName": "longestIncreasingSubsequence",
+    "tests": [
+      {
+        "input": [
+          10,
+          9,
+          2,
+          5,
+          3,
+          7,
+          101,
+          18
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "functionName": "maxProductSubarray",
+    "tests": [
+      {
+        "input": [
+          2,
+          3,
+          -2,
+          4
+        ],
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "functionName": "prefixSum",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": [
+          1,
+          3,
+          6,
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "functionName": "equilibriumIndex",
+    "tests": [
+      {
+        "input": [
+          -7,
+          1,
+          5,
+          2,
+          -4,
+          3,
+          0
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "functionName": "unionAndIntersection",
+    "tests": [
+      {
+        "input1": [
+          1,
+          2,
+          3
+        ],
+        "input2": [
+          2,
+          3,
+          4
+        ],
+        "expected": {
+          "union": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "intersection": [
+            2,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "functionName": "medianOfTwoSortedArrays",
+    "tests": [
+      {
+        "input1": [
+          1,
+          3
+        ],
+        "input2": [
+          2
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "functionName": "rotateArrayQueries",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "rotations": 1,
+        "queryIndex": 2,
+        "expected": 5
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "functionName": "kadaneMaxSubarray",
+    "tests": [
+      {
+        "input": [
+          -2,
+          1,
+          -3,
+          4,
+          -1,
+          2,
+          1,
+          -5,
+          4
+        ],
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "functionName": "peakElement",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          1
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "functionName": "slidingWindowMax",
+    "tests": [
+      {
+        "input": [
+          1,
+          3,
+          -1,
+          -3,
+          5,
+          3,
+          6,
+          7
+        ],
+        "k": 3,
+        "expected": [
+          3,
+          3,
+          5,
+          5,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "functionName": "rearrangeAlternateMaxMin",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "expected": [
+          6,
+          1,
+          5,
+          2,
+          4,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "functionName": "firstMissingPositive",
+    "tests": [
+      {
+        "input": [
+          3,
+          4,
+          -1,
+          1
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "functionName": "minJumpsToEnd",
+    "tests": [
+      {
+        "input": [
+          2,
+          3,
+          1,
+          1,
+          4
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "functionName": "pairExistsWithSum",
+    "tests": [
+      {
+        "input": [
+          10,
+          15,
+          3,
+          7
+        ],
+        "target": 17,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "functionName": "countSubarraysWithZeroXor",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          2,
+          1
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "functionName": "reverseString",
+    "tests": [
+      {
+        "input": "hello",
+        "expected": "olleh"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "functionName": "isPalindrome",
+    "tests": [
+      {
+        "input": "racecar",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "functionName": "countVowelsAndConsonants",
+    "tests": [
+      {
+        "input": "hello world",
+        "expected": {
+          "vowels": 3,
+          "consonants": 7
+        }
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "functionName": "firstNonRepeatingChar",
+    "tests": [
+      {
+        "input": "swiss",
+        "expected": "w"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "functionName": "permutations",
+    "tests": [
+      {
+        "input": "abc",
+        "expectedCount": 6
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "functionName": "removeDuplicatesInString",
+    "tests": [
+      {
+        "input": "banana",
+        "expected": "ban"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "functionName": "longestSubstringWithoutRepeating",
+    "tests": [
+      {
+        "input": "abcabcbb",
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "functionName": "areAnagrams",
+    "tests": [
+      {
+        "input1": "listen",
+        "input2": "silent",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "functionName": "stringCompression",
+    "tests": [
+      {
+        "input": "aaabbc",
+        "expected": "a3b2c1"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "functionName": "canFormPalindrome",
+    "tests": [
+      {
+        "input": "carrace",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "functionName": "longestCommonPrefix",
+    "tests": [
+      {
+        "input": [
+          "flower",
+          "flow",
+          "flight"
+        ],
+        "expected": "fl"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "functionName": "kmpSearch",
+    "tests": [
+      {
+        "text": "abcdabcabcd",
+        "pattern": "abc",
+        "expected": [
+          0,
+          4,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "functionName": "countWordOccurrences",
+    "tests": [
+      {
+        "text": "hello world hello",
+        "word": "hello",
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "functionName": "reverseWords",
+    "tests": [
+      {
+        "input": "hello world",
+        "expected": "world hello"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "functionName": "capitalizeWords",
+    "tests": [
+      {
+        "input": "hello world",
+        "expected": "Hello World"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "functionName": "longestPalindromicSubstring",
+    "tests": [
+      {
+        "input": "babad",
+        "expected": "bab"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "functionName": "validShuffle",
+    "tests": [
+      {
+        "input1": "abc",
+        "input2": "def",
+        "candidate": "adbcef",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "functionName": "smallestWindowContainingAllChars",
+    "tests": [
+      {
+        "input": "ADOBECODEBANC",
+        "pattern": "ABC",
+        "expected": "BANC"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "functionName": "removeSpecialCharacters",
+    "tests": [
+      {
+        "input": "he!!llo@#",
+        "expected": "hello"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "functionName": "isRotation",
+    "tests": [
+      {
+        "input1": "waterbottle",
+        "input2": "erbottlewat",
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "functionName": "stackUsingArray",
+    "tests": [
+      {
+        "input": [
+          "push 1",
+          "push 2",
+          "pop"
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "functionName": "queueUsingLinkedList",
+    "tests": [
+      {
+        "input": [
+          "enqueue 1",
+          "enqueue 2",
+          "dequeue"
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "functionName": "priorityQueue",
+    "tests": [
+      {
+        "input": [
+          5,
+          1,
+          3
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "functionName": "detectCycleInLinkedList",
+    "tests": [
+      {
+        "input": [
+          3,
+          2,
+          0,
+          -4
+        ],
+        "pos": 1,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "functionName": "mergeKSortedLists",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          3,
+          4,
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "functionName": "reverseLinkedList",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "functionName": "middleOfLinkedList",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "functionName": "detectAndRemoveLoop",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "pos": 1,
+        "expected": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "functionName": "binarySearchTree",
+    "tests": [
+      {
+        "input": [
+          5,
+          3,
+          7,
+          2,
+          4,
+          6,
+          8
+        ],
+        "search": 6,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "functionName": "treeTraversals",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": {
+          "inorder": [
+            2,
+            1,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "functionName": "lowestCommonAncestor",
+    "tests": [
+      {
+        "tree": [
+          6,
+          2,
+          8,
+          0,
+          4,
+          7,
+          9
+        ],
+        "p": 2,
+        "q": 8,
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "functionName": "minMaxHeap",
+    "tests": [
+      {
+        "input": [
+          3,
+          1,
+          6,
+          5,
+          2,
+          4
+        ],
+        "expectedMin": 1,
+        "expectedMax": 6
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "functionName": "bfsTraversal",
+    "tests": [
+      {
+        "graph": {
+          "0": [
+            1,
+            2
+          ],
+          "1": [
+            2
+          ],
+          "2": [
+            0,
+            3
+          ],
+          "3": [
+            3
+          ]
+        },
+        "start": 2,
+        "expected": [
+          2,
+          0,
+          3,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "functionName": "dfsTraversal",
+    "tests": [
+      {
+        "graph": {
+          "0": [
+            1,
+            2
+          ],
+          "1": [
+            2
+          ],
+          "2": [
+            0,
+            3
+          ],
+          "3": [
+            3
+          ]
+        },
+        "start": 2,
+        "expected": [
+          2,
+          0,
+          1,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "functionName": "dijkstraShortestPath",
+    "tests": [
+      {
+        "graph": [
+          [
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            7
+          ],
+          [
+            0,
+            0,
+            7,
+            0
+          ]
+        ],
+        "source": 0,
+        "expected": [
+          0,
+          4,
+          12,
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "functionName": "connectedComponents",
+    "tests": [
+      {
+        "graph": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "functionName": "topologicalSort",
+    "tests": [
+      {
+        "graph": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "expected": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "functionName": "lruCache",
+    "tests": [
+      {
+        "capacity": 2,
+        "operations": [
+          "put 1 1",
+          "put 2 2",
+          "get 1",
+          "put 3 3",
+          "get 2"
+        ],
+        "expected": [
+          1,
+          -1
+        ]
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "functionName": "isBalancedTree",
+    "tests": [
+      {
+        "input": [
+          3,
+          9,
+          20,
+          null,
+          null,
+          15,
+          7
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "functionName": "serializeDeserializeTree",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          null,
+          null,
+          4,
+          5
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          null,
+          null,
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "functionName": "isPrime",
+    "tests": [
+      {
+        "input": 29,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "functionName": "factorial",
+    "tests": [
+      {
+        "input": 5,
+        "expected": 120
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "functionName": "fibonacci",
+    "tests": [
+      {
+        "input": 6,
+        "expected": [
+          0,
+          1,
+          1,
+          2,
+          3,
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "functionName": "gcdLcm",
+    "tests": [
+      {
+        "input1": 12,
+        "input2": 18,
+        "expected": {
+          "gcd": 6,
+          "lcm": 36
+        }
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "functionName": "isArmstrong",
+    "tests": [
+      {
+        "input": 153,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "functionName": "pascalsTriangle",
+    "tests": [
+      {
+        "input": 5,
+        "expected": [
+          [
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            3,
+            3,
+            1
+          ],
+          [
+            1,
+            4,
+            6,
+            4,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "functionName": "isPerfectNumber",
+    "tests": [
+      {
+        "input": 28,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "functionName": "fastPower",
+    "tests": [
+      {
+        "x": 2,
+        "n": 10,
+        "expected": 1024
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "functionName": "matrixMultiplication",
+    "tests": [
+      {
+        "input1": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "input2": [
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "expected": [
+          [
+            19,
+            22
+          ],
+          [
+            43,
+            50
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "functionName": "rotateMatrixClockwise",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ]
+        ],
+        "expected": [
+          [
+            7,
+            4,
+            1
+          ],
+          [
+            8,
+            5,
+            2
+          ],
+          [
+            9,
+            6,
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "functionName": "readFile",
+    "tests": [
+      {
+        "fileContent": "hello\nworld",
+        "expected": "hello\nworld"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "functionName": "countFileStats",
+    "tests": [
+      {
+        "fileContent": "hello world",
+        "expected": {
+          "lines": 1,
+          "words": 2,
+          "chars": 11
+        }
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "functionName": "copyFile",
+    "tests": [
+      {
+        "fileContent": "abc",
+        "expected": "abc"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "functionName": "parseJsonKeys",
+    "tests": [
+      {
+        "input": {
+          "a": 1,
+          "b": 2
+        },
+        "expected": [
+          "a",
+          "b"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "functionName": "listFilesInDirectory",
+    "tests": [
+      {
+        "input": [
+          "a.txt",
+          "b.txt"
+        ],
+        "expected": [
+          "a.txt",
+          "b.txt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "functionName": "gzipCompress",
+    "tests": [
+      {
+        "input": "aaaa",
+        "expectedSizeDecreased": true
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "functionName": "httpGetRequest",
+    "tests": [
+      {
+        "url": "https://example.com",
+        "expectedStatus": 200
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "functionName": "objectSerialization",
+    "tests": [
+      {
+        "input": {
+          "name": "John",
+          "age": 30
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "functionName": "sortStringsFromFile",
+    "tests": [
+      {
+        "input": [
+          "banana",
+          "apple",
+          "cherry"
+        ],
+        "expected": [
+          "apple",
+          "banana",
+          "cherry"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "functionName": "mergeTextFiles",
+    "tests": [
+      {
+        "input": [
+          "a",
+          "b",
+          "c"
+        ],
+        "expected": "abc"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "functionName": "multithreadingRunnable",
+    "tests": [
+      {
+        "threads": 2,
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "functionName": "sumWithStreams",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 15
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "functionName": "completableFutureAsync",
+    "tests": [
+      {
+        "input": 5,
+        "expected": 25
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "functionName": "sortCustomObjects",
+    "tests": [
+      {
+        "input": [
+          {
+            "name": "b",
+            "age": 2
+          },
+          {
+            "name": "a",
+            "age": 3
+          }
+        ],
+        "expected": [
+          {
+            "name": "a",
+            "age": 3
+          },
+          {
+            "name": "b",
+            "age": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "functionName": "threadSafeSingleton",
+    "tests": [
+      {
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "functionName": "producerConsumer",
+    "tests": [
+      {
+        "production": [
+          1,
+          2,
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "functionName": "optionalUsage",
+    "tests": [
+      {
+        "input": null,
+        "expected": "empty"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "functionName": "streamFilterAndMap",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": [
+          2,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "functionName": "genericBinarySearch",
+    "tests": [
+      {
+        "input": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "target": "c",
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "functionName": "threadPoolExecutor",
+    "tests": [
+      {
+        "threads": 3,
+        "expected": true
+      }
+    ]
+  }
+]
