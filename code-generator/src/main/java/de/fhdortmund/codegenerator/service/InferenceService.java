@@ -1,7 +1,9 @@
 package de.fhdortmund.codegenerator.service;
 
+import com.google.gson.Gson;
 import de.fhdortmund.codegenerator.entity.InferenceEntity;
 import de.fhdortmund.codegenerator.repository.InferenceRepository;
+import de.fhdortmund.codegenerator.requests.Prompts;
 import de.fhdortmund.codegenerator.util.GenerateMetrics;
 import de.fhdortmund.codegenerator.util.WriteJavaFiles;
 import jakarta.annotation.PostConstruct;
@@ -44,9 +46,11 @@ public class InferenceService {
         this.irepo = irepo;
     }
 
-    public String addToQueue(String req) {
+    public String addToQueue(Prompts req) {
         Map<String, String> reqPrompt = new HashMap<>();
-        reqPrompt.put("prompt", req);
+        Gson gson = new Gson();
+        String reqObj = gson.toJson(req);
+        reqPrompt.put("prompt", reqObj);
         StreamEntryID id = jedis.xadd(streamKey, StreamEntryID.NEW_ENTRY, reqPrompt);
         if (id != null) {
             logger.info("Request has been added to the queue for further processing: {}", id.toString());

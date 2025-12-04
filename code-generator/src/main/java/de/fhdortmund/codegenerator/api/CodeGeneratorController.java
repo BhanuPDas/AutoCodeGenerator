@@ -27,11 +27,11 @@ public class CodeGeneratorController {
 
     @PostMapping("/process-request")
     public ResponseEntity<String> processReq(@Valid @NotNull @RequestBody Prompts prompt) {
-        if (prompt.getPrompt() == null || prompt.getPrompt().isBlank()) {
+        if (prompt.getId() == 0 || prompt.getPrompt() == null || prompt.getPrompt().isBlank()) {
             return ResponseEntity.ok("Invalid Request");
         }
         logger.info("Request received: {}", prompt.getPrompt());
-        String msgId = inferenceService.addToQueue(prompt.getPrompt());
+        String msgId = inferenceService.addToQueue(prompt);
         if (!msgId.isBlank()) {
             return ResponseEntity.ok("Request: " + prompt.getPrompt() + " is added to the queue: " + msgId + " to process.");
         }

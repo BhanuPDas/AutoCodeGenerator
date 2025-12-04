@@ -1,8 +1,10 @@
 package de.fhdortmund.codegenerator.service;
 
+import com.google.gson.Gson;
 import de.fhdortmund.codegenerator.entity.InferenceEntity;
 import de.fhdortmund.codegenerator.repository.InferenceRepository;
 import de.fhdortmund.codegenerator.requests.InferenceRequest;
+import de.fhdortmund.codegenerator.requests.Prompts;
 import de.fhdortmund.codegenerator.response.InferenceResponse;
 import de.fhdortmund.codegenerator.util.GenerateMetrics;
 import de.fhdortmund.codegenerator.util.WriteJavaFiles;
@@ -67,10 +69,12 @@ public class ReadRedisQueue implements Runnable {
                         Map<String, String> fields = entry.getFields();
                         String prompt = fields.get("prompt");
                         logger.info("Received message ID = {} & Prompt: {}", messageId.toString(), prompt);
+                        Gson gson = new Gson();
+                        Prompts promptReq = gson.fromJson(prompt, Prompts.class);
 
                         HttpHeaders headers = new HttpHeaders();
                         headers.setContentType(MediaType.APPLICATION_JSON);
-                        InferenceRequest req = new InferenceRequest(prompt);
+                        InferenceRequest req = new InferenceRequest(promptReq.getPrompt());
                         HttpEntity<InferenceRequest> inferenceEntity = new HttpEntity<>(req, headers);
                         Instant timeStart = Instant.now();
                         ResponseEntity<InferenceResponse> response = rest.exchange(inferenceUrl, HttpMethod.POST, inferenceEntity,
@@ -90,10 +94,10 @@ public class ReadRedisQueue implements Runnable {
                             logger.info("Inference response is: {} \n Latency: {} \n Inference time: {} \n Tokens per sec: {} \n No of Tokens generated: {} \n GPU Util%: {} \n Mem Engine Util%: {} \n Mem Used: {} \n Total Mem: {}",
                                     result, latency, inferenceTime, tpms, nTokens, gpuUtil, memUtil, memUsed, totalMem);
                             metrics.updateMetrics(latency, inferenceTime, tpms, nTokens, gpuUtil, memUtil, memUsed, totalMem);
-                            jfiles.saveFormattedJavaFile(result);
+                            jfiles.saveFormattedJavaFile(promptReq.getId(), result);
                             InferenceEntity iEntity = new InferenceEntity();
                             iEntity.setMsgId(messageId.toString());
-                            iEntity.setPrompt(prompt);
+                            iEntity.setPrompt(promptReq.getPrompt());
                             iEntity.setResult(result);
                             iEntity.setSentToUi("No");
                             iEntityList.add(iEntity);

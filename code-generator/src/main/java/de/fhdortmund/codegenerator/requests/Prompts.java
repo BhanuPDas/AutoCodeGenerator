@@ -11,6 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 public class Prompts implements Serializable {
+    private int id;
     @NotNull(message = "Null Prompts")
     @NotBlank(message = "Empty Prompts")
     private String prompt;
