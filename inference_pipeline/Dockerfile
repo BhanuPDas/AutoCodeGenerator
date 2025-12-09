@@ -14,4 +14,4 @@ RUN python -c 'from huggingface_hub import login; import os; login(token=os.gete
 
 COPY . .
 EXPOSE 5050
-CMD ["uvicorn", "inference_13b:app", "--host", "0.0.0.0", "--port", "5050"]
+CMD ["uvicorn", "inference_34b:app", "--host", "0.0.0.0", "--port", "5050"]
