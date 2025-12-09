@@ -2,27 +2,59 @@ import os
 import subprocess
 import uuid
 from datetime import datetime
+import json
+
+# Path to your HumanEval-style test JSON
+TEST_FILE = "tests.json"
 
 
 def run_cmd(cmd):
+    """Run a shell command and return (returncode, stdout, stderr)."""
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     return result.returncode, result.stdout, result.stderr
 
 
+def load_tests():
+    """Load test cases from JSON file."""
+    if not os.path.exists(TEST_FILE):
+        return []
+    with open(TEST_FILE, "r") as f:
+        return json.load(f)
+
+
+def run_java_test(class_name, test):
+    """
+    Run a compiled Java class with a test input.
+    Java class must print only the answer.
+    """
+    input_str = ",".join(map(str, test["input"]))
+    cmd = ["java", class_name, input_str]
+    code, out, err = run_cmd(cmd)
+
+    if code != 0:
+        return False, f"Runtime Error: {err}"
+
+    output = out.strip()
+    try:
+        val = int(output)
+    except:
+        return False, f"Invalid output: {output}"
+
+    return val == test["expected"], f"expected={test['expected']} got={val}"
+
+
 def main():
+    # ----------------------------
+    # Setup folder and docker copy
+    # ----------------------------
     folder_name = f"/home/bhanu/codeQuality/java_code_run_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{uuid.uuid4().hex[:6]}"
     os.makedirs(folder_name, exist_ok=True)
-    print(f"Created folder: {folder_name}")
     docker_container = "code-gen-ser"
     docker_path = "/root/java/generated-code/"
-    print("Copying .java files from Docker container...")
-    copy_cmd = [
-        "docker", "cp",
-        f"{docker_container}:{docker_path}",
-        folder_name
-    ]
 
-    code, out, err = run_cmd(copy_cmd)
+    # Copy .java files from Docker container
+    print("Copying Java files from Docker container...")
+    code, out, err = run_cmd(["docker", "cp", f"{docker_container}:{docker_path}", folder_name])
     if code != 0:
         print("Error copying files:", err)
         return
@@ -31,123 +63,132 @@ def main():
     if not os.path.isdir(work_dir):
         work_dir = folder_name
 
-    print(f"Files copied to: {work_dir}")
+    # Delete .java files from container
+    run_cmd(["docker", "exec", docker_container, "bash", "-c", f"rm -f {docker_path}/*.java"])
 
-    print("Deleting .java files from container...")
-
-    delete_cmd = [
-        "docker", "exec", docker_container,
-        "bash", "-c", f"rm -f {docker_path}/*.java"
-    ]
-
-    _, _, del_err = run_cmd(delete_cmd)
-    if del_err.strip():
-        print("Warning while deleting:", del_err)
-
-    print("All .java files deleted from container.")
-
+    # ----------------------------
+    # Prepare Java files and tests
+    # ----------------------------
     java_files = [f for f in os.listdir(work_dir) if f.endswith(".java")]
     total_files = len(java_files)
 
-    print(f"Found {total_files} Java files to compile.")
+    compile_pass = 0
+    compile_fail = 0
+    test_pass = 0
+    test_fail = 0
 
-    passed = 0
-    failed = 0
     results = []
+    tests = load_tests()
 
     for java_file in java_files:
         file_path = os.path.join(work_dir, java_file)
-        print(f"Compiling {java_file} ...")
 
-        code, out, err = run_cmd(["javac", file_path])
+        # ---------------------------
+        # Compile the Java file
+        # ---------------------------
+        print(f"Compiling {java_file}...")
+        code, _, err = run_cmd(["javac", file_path])
+        compiled_ok = (code == 0)
 
-        if code == 0:
-            passed += 1
+        if compiled_ok:
+            compile_pass += 1
         else:
-            failed += 1
+            compile_fail += 1
 
-        results.append({
+        file_result = {
             "file": java_file,
-            "status": "PASSED" if code == 0 else "FAILED",
-            "error": err.strip()
-        })
+            "compile_status": "PASS" if compiled_ok else "FAIL",
+            "compile_error": err.strip(),
+            "tests": []
+        }
 
-    quality = round((passed / total_files) * 100, 2) if total_files else 0
+        # ------------------------------------
+        # Run tests only if compilation passed
+        # ------------------------------------
+        if compiled_ok:
+            class_name = java_file.replace(".java", "")
 
-    print(f"Compilation complete.")
-    print(f"Total: {total_files} | Passed: {passed} | Failed: {failed} | Quality: {quality}%")
+            for t in tests:
+                if t["functionName"].lower() == class_name.lower():
+                    for test_case in t["tests"]:
+                        ok, msg = run_java_test(class_name, test_case)
+                        if ok:
+                            test_pass += 1
+                        else:
+                            test_fail += 1
 
+                        file_result["tests"].append({
+                            "input": test_case["input"],
+                            "expected": test_case["expected"],
+                            "status": "PASS" if ok else "FAIL",
+                            "message": msg
+                        })
+        else:
+            # Increment test_fail automatically if compilation failed
+            test_fail += 1
+            file_result["tests"].append({
+                "input": "-",
+                "expected": "-",
+                "status": "FAIL",
+                "message": "Test not run due to compilation failure"
+            })
+
+        results.append(file_result)
+
+    total_tests = test_pass + test_fail
+
+    # ----------------------------
+    # Generate HTML report
+    # ----------------------------
     html_path = os.path.join(folder_name, "report.html")
 
     html = f"""
     <html>
     <head>
-        <title>Code Quality Report</title>
+        <title>Java Compilation & Test Report</title>
         <style>
             body {{ font-family: Arial; margin: 40px; }}
-            .summary {{ font-size: 20px; margin-bottom: 20px; }}
-            .bar-container {{
-                width: 80%;
-                background: #eee;
-                border-radius: 10px;
-                height: 25px;
-                margin-bottom: 20px;
-            }}
-            .bar {{
-                height: 25px;
-                border-radius: 10px;
-                width: {quality}%;
-                background: {'#4CAF50' if quality >= 50 else '#FF5733'};
-                text-align: center;
-                color: white;
-                line-height: 25px;
-            }}
-            table {{
-                border-collapse: collapse;
-                width: 80%;
-            }}
-            th, td {{
-                padding: 10px;
-                border: 1px solid #ddd;
-            }}
-            th {{
-                background: #f2f2f2;
-            }}
+            table {{ border-collapse: collapse; width: 100%; }}
+            th, td {{ border: 1px solid #ddd; padding: 8px; }}
+            th {{ background: #f2f2f2; }}
             .pass {{ background: #d4edda; }}
             .fail {{ background: #f8d7da; }}
         </style>
     </head>
     <body>
-        <h1>Java Code Quality Report</h1>
+        <h1>Java Compilation & Test Report</h1>
 
-        <div class="summary">
-            <p><strong>Total Files:</strong> {total_files}</p>
-            <p><strong>Passed:</strong> {passed}</p>
-            <p><strong>Failed:</strong> {failed}</p>
-            <p><strong>Code Quality:</strong> {quality}%</p>
-        </div>
+        <h2>Summary</h2>
+        <ul>
+            <li><strong>Total Files:</strong> {total_files}</li>
+            <li><strong>Compiled Successfully:</strong> {compile_pass}</li>
+            <li><strong>Compilation Failed:</strong> {compile_fail}</li>
+            <li><strong>Total Test Cases:</strong> {total_tests}</li>
+            <li><strong>Test Cases Passed:</strong> {test_pass}</li>
+            <li><strong>Test Cases Failed:</strong> {test_fail}</li>
+        </ul>
 
-        <div class="bar-container">
-            <div class="bar">{quality}%</div>
-        </div>
-
-        <h2>File-wise Compilation Result</h2>
+        <h2>File Results</h2>
         <table>
             <tr>
-                <th>Java File</th>
-                <th>Status</th>
-                <th>Error (if any)</th>
+                <th>File</th>
+                <th>Compile Status</th>
+                <th>Test Results</th>
             </tr>
     """
 
     for r in results:
-        cls = "pass" if r["status"] == "PASSED" else "fail"
+        cls = "pass" if r["compile_status"] == "PASS" else "fail"
+        tests_html = "<br>".join([
+            f"{t['status']} | input={t['input']} | expected={t['expected']} | {t['message']}"
+            for t in r["tests"]
+        ])
         html += f"""
-            <tr class="{cls}">
-                <td>{r['file']}</td>
-                <td>{r['status']}</td>
-                <td><pre>{r['error']}</pre></td>
-            </tr>
+        <tr class="{cls}">
+            <td>{r['file']}</td>
+            <td>{r['compile_status']}</td>
+            <td><pre>{tests_html if tests_html else '-'}</pre></td>
+        </tr>
         """
 
     html += """
@@ -159,7 +200,9 @@ def main():
     with open(html_path, "w") as f:
         f.write(html)
 
-    print(f"HTML report generated at: {html_path}")
+    print(f"\nReport generated at {html_path}")
+    print(f"Files compiled: {compile_pass} passed, {compile_fail} failed")
+    print(f"Test cases: {test_pass} passed, {test_fail} failed")
 
 
 if __name__ == "__main__":

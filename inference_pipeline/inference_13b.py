@@ -8,7 +8,8 @@ import gpu_stats
 import threading
 
 app = FastAPI()
-model = "meta-llama/CodeLlama-13b-Instruct-hf"
+#model = "meta-llama/CodeLlama-13b-Instruct-hf"
+model = "meta-llama/CodeLlama-34b-Instruct-hf"
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 llm = AutoModelForCausalLM.from_pretrained(
