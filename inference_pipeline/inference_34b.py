@@ -15,7 +15,7 @@ tokenizer = AutoTokenizer.from_pretrained(model)
 llm = AutoModelForCausalLM.from_pretrained(
     model,
     dtype=torch.float16,
-    device_map="auto",
+    device_map={"": "cuda:0"},
     low_cpu_mem_usage=True
 )
 
@@ -39,7 +39,7 @@ def generate_code(request: PromptRequest):
         formatted_prompt = f"Task: {request.prompt.strip()}"
         inputs = tokenizer(formatted_prompt, return_tensors="pt").to(llm.device)
         input_length = inputs["input_ids"].shape[-1]
-        max_context_length = 4096
+        max_context_length = 16384
         remaining_length = max_context_length - input_length
         max_new_tokens = max(200, int(remaining_length * 0.9))
 
