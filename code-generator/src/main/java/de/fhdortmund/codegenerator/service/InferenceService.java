@@ -29,7 +29,7 @@ public class InferenceService {
     private final GenerateMetrics metrics;
     private final WriteJavaFiles jfiles;
     private final UnifiedJedis jedis;
-    private final String streamKey = "PrompReq";
+    private final String streamKey = "PromptReq";
     private final String groupName = "llm";
     Logger logger = LogManager.getLogger(InferenceService.class);
     @Value("${inference.url}")
@@ -79,7 +79,8 @@ public class InferenceService {
         try {
             jedis.xgroupCreate(streamKey, groupName, StreamEntryID.XGROUP_LAST_ENTRY, true);
             logger.info("Redis group created successfully");
-        } catch (Exception ignored) {
+        } catch (Exception ex) {
+            logger.error("Exception Occured while creating redis group: {}", ex.getMessage());
         }
     }
 
