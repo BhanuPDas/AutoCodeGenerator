@@ -1,5 +1,9 @@
 package de.fhdortmund.codegenerator;
 
+import org.apache.hc.client5.http.ConnectionKeepAliveStrategy;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
+import org.apache.hc.core5.util.TimeValue;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,8 +26,24 @@ public class CodeGeneratorApplication {
 
     @Bean
     public RestTemplate createRestTemplate(RestTemplateBuilder restBuilder) {
-        return restBuilder.requestFactory(() -> new HttpComponentsClientHttpRequestFactory(
-                HttpClients.custom().setConnectionReuseStrategy((request, response, context) -> false).build())).build();
+        PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
+        cm.setMaxTotal(5);
+        cm.setDefaultMaxPerRoute(5);
+        ConnectionKeepAliveStrategy keepAliveStrategy = (response, context) ->
+                TimeValue.ofSeconds(60);
+        CloseableHttpClient httpClient = HttpClients.custom()
+                .setConnectionManager(cm)
+                .setKeepAliveStrategy(keepAliveStrategy)
+                .setConnectionReuseStrategy((req, resp, ctx) -> true)
+                .evictExpiredConnections()
+                .evictIdleConnections(TimeValue.ofSeconds(5))
+                .build();
+
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory(httpClient);
+        factory.setConnectTimeout(5000);
+        factory.setReadTimeout(300000);
+        factory.setConnectionRequestTimeout(5000);
+        return restBuilder.requestFactory(() -> factory).build();
     }
 
     @Bean
