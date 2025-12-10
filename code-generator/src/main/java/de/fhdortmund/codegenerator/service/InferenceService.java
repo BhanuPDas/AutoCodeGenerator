@@ -87,8 +87,9 @@ public class InferenceService {
     @PostConstruct
     public void fetchPromptQueue() {
         String consumer = "c1";
-        try(ExecutorService service = Executors.newFixedThreadPool(5)) {
+        try {
             createGroup();
+            ExecutorService service = Executors.newSingleThreadExecutor();
             service.submit(new ReadRedisQueue(jedis, groupName, consumer, streamKey, inferenceUrl, rest, metrics, jfiles, irepo));
         } catch (Exception ex) {
             logger.error("Exception occurred while creating a thread to read from redis: {}", ex.getMessage());
