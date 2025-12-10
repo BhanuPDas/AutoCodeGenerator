@@ -68,7 +68,6 @@ public class ReadRedisQueue implements Runnable {
 
         } catch (Exception e) {
             logger.error("Error while fetching the prompt: {}", e.getMessage());
-            isRunning = false;
         }
     }
 

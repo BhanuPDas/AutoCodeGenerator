@@ -1,402 +1,402 @@
 [
   {
     "id": "1",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the second largest element in an array."
+    "question": "You are an expert programmer. Write a Java program to find the second largest element in an array."
   },
   {
     "id": "2",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the intersection of two arrays."
+    "question": "You are an expert programmer. Write a Java program to find the intersection of two arrays."
   },
   {
     "id": "3",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to merge two sorted arrays without using extra space."
+    "question": "You are an expert programmer. Write a Java program to merge two sorted arrays without using extra space."
   },
   {
     "id": "4",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the missing number in a sequence of consecutive integers."
+    "question": "You are an expert programmer. Write a Java program to find the missing number in a sequence of consecutive integers."
   },
   {
     "id": "5",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to count the number of pairs with a given sum in an array."
+    "question": "You are an expert programmer. Write a Java program to count the number of pairs with a given sum in an array."
   },
   {
     "id": "6",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to move all zeros to the end of the array while maintaining the order of other elements."
+    "question": "You are an expert programmer. Write a Java program to move all zeros to the end of the array while maintaining the order of other elements."
   },
   {
     "id": "7",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to rotate an array circularly to the right by k positions."
+    "question": "You are an expert programmer. Write a Java program to rotate an array circularly to the right by k positions."
   },
   {
     "id": "8",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find all subarrays with a given sum."
+    "question": "You are an expert programmer. Write a Java program to find all subarrays with a given sum."
   },
   {
     "id": "9",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement binary search iteratively and recursively."
+    "question": "You are an expert programmer. Write a Java program to implement binary search iteratively and recursively."
   },
   {
     "id": "10",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to sort an array using merge sort."
+    "question": "You are an expert programmer. Write a Java program to sort an array using merge sort."
   },
   {
     "id": "11",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to sort an array using quicksort."
+    "question": "You are an expert programmer. Write a Java program to sort an array using quicksort."
   },
   {
     "id": "12",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the kth smallest element in an array."
+    "question": "You are an expert programmer. Write a Java program to find the kth smallest element in an array."
   },
   {
     "id": "13",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the majority element in an array."
+    "question": "You are an expert programmer. Write a Java program to find the majority element in an array."
   },
   {
     "id": "14",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find duplicates in an array using hashing."
+    "question": "You are an expert programmer. Write a Java program to find duplicates in an array using hashing."
   },
   {
     "id": "15",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to merge overlapping intervals."
+    "question": "You are an expert programmer. Write a Java program to merge overlapping intervals."
   },
   {
     "id": "16",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the longest increasing subsequence in an array."
+    "question": "You are an expert programmer. Write a Java program to find the longest increasing subsequence in an array."
   },
   {
     "id": "17",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the maximum product subarray."
+    "question": "You are an expert programmer. Write a Java program to find the maximum product subarray."
   },
   {
     "id": "18",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to calculate the prefix sum of an array."
+    "question": "You are an expert programmer. Write a Java program to calculate the prefix sum of an array."
   },
   {
     "id": "19",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find equilibrium index in an array."
+    "question": "You are an expert programmer. Write a Java program to find equilibrium index in an array."
   },
   {
     "id": "20",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to compute the union and intersection of two arrays."
+    "question": "You are an expert programmer. Write a Java program to compute the union and intersection of two arrays."
   },
   {
     "id": "21",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the median of two sorted arrays."
+    "question": "You are an expert programmer. Write a Java program to find the median of two sorted arrays."
   },
   {
     "id": "22",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to rotate an array circularly and perform multiple queries efficiently."
+    "question": "You are an expert programmer. Write a Java program to rotate an array circularly and perform multiple queries efficiently."
   },
   {
     "id": "23",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the maximum subarray sum using Kadane’s algorithm."
+    "question": "You are an expert programmer. Write a Java program to find the maximum subarray sum using Kadane’s algorithm."
   },
   {
     "id": "24",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the peak element in an array."
+    "question": "You are an expert programmer. Write a Java program to find the peak element in an array."
   },
   {
     "id": "25",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement the sliding window maximum."
+    "question": "You are an expert programmer. Write a Java program to implement the sliding window maximum."
   },
   {
     "id": "26",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to rearrange array elements alternatively (max, min, max, min...)."
+    "question": "You are an expert programmer. Write a Java program to rearrange array elements alternatively (max, min, max, min...)."
   },
   {
     "id": "27",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the first missing positive integer."
+    "question": "You are an expert programmer. Write a Java program to find the first missing positive integer."
   },
   {
     "id": "28",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the minimum number of jumps to reach the end of an array."
+    "question": "You are an expert programmer. Write a Java program to find the minimum number of jumps to reach the end of an array."
   },
   {
     "id": "29",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find if there exists a pair of elements with sum equal to x."
+    "question": "You are an expert programmer. Write a Java program to find if there exists a pair of elements with sum equal to x."
   },
   {
     "id": "30",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the number of subarrays with XOR equal to zero."
+    "question": "You are an expert programmer. Write a Java program to find the number of subarrays with XOR equal to zero."
   },
   {
     "id": "31",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to reverse a string without using reverse()."
+    "question": "You are an expert programmer. Write a Java program to reverse a string without using reverse()."
   },
   {
     "id": "32",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if a string is a palindrome."
+    "question": "You are an expert programmer. Write a Java program to check if a string is a palindrome."
   },
   {
     "id": "33",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to count vowels and consonants in a string."
+    "question": "You are an expert programmer. Write a Java program to count vowels and consonants in a string."
   },
   {
     "id": "34",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the first non-repeating character in a string."
+    "question": "You are an expert programmer. Write a Java program to find the first non-repeating character in a string."
   },
   {
     "id": "35",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find all permutations of a string."
+    "question": "You are an expert programmer. Write a Java program to find all permutations of a string."
   },
   {
     "id": "36",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to remove duplicate characters from a string."
+    "question": "You are an expert programmer. Write a Java program to remove duplicate characters from a string."
   },
   {
     "id": "37",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the longest substring without repeating characters."
+    "question": "You are an expert programmer. Write a Java program to find the longest substring without repeating characters."
   },
   {
     "id": "38",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if two strings are anagrams."
+    "question": "You are an expert programmer. Write a Java program to check if two strings are anagrams."
   },
   {
     "id": "39",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to compress a string (like a2b1c5a3)."
+    "question": "You are an expert programmer. Write a Java program to compress a string (like a2b1c5a3)."
   },
   {
     "id": "40",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if a string can be rearranged to form a palindrome."
+    "question": "You are an expert programmer. Write a Java program to check if a string can be rearranged to form a palindrome."
   },
   {
     "id": "41",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the longest common prefix among an array of strings."
+    "question": "You are an expert programmer. Write a Java program to find the longest common prefix among an array of strings."
   },
   {
     "id": "42",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement pattern matching using the KMP algorithm."
+    "question": "You are an expert programmer. Write a Java program to implement pattern matching using the KMP algorithm."
   },
   {
     "id": "43",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to count occurrences of a word in a text file."
+    "question": "You are an expert programmer. Write a Java program to count occurrences of a word in a text file."
   },
   {
     "id": "44",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to reverse words in a sentence."
+    "question": "You are an expert programmer. Write a Java program to reverse words in a sentence."
   },
   {
     "id": "45",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to capitalize the first letter of every word in a string."
+    "question": "You are an expert programmer. Write a Java program to capitalize the first letter of every word in a string."
   },
   {
     "id": "46",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the longest palindromic substring."
+    "question": "You are an expert programmer. Write a Java program to find the longest palindromic substring."
   },
   {
     "id": "47",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if a string is a valid shuffle of two other strings."
+    "question": "You are an expert programmer. Write a Java program to check if a string is a valid shuffle of two other strings."
   },
   {
     "id": "48",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the smallest window containing all characters of another string."
+    "question": "You are an expert programmer. Write a Java program to find the smallest window containing all characters of another string."
   },
   {
     "id": "49",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to remove all special characters from a string."
+    "question": "You are an expert programmer. Write a Java program to remove all special characters from a string."
   },
   {
     "id": "50",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if one string is a rotation of another."
+    "question": "You are an expert programmer. Write a Java program to check if one string is a rotation of another."
   },
   {
     "id": "51",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement a stack using arrays."
+    "question": "You are an expert programmer. Write a Java program to implement a stack using arrays."
   },
   {
     "id": "52",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement a queue using linked list."
+    "question": "You are an expert programmer. Write a Java program to implement a queue using linked list."
   },
   {
     "id": "53",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement a priority queue."
+    "question": "You are an expert programmer. Write a Java program to implement a priority queue."
   },
   {
     "id": "54",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to detect a cycle in a linked list."
+    "question": "You are an expert programmer. Write a Java program to detect a cycle in a linked list."
   },
   {
     "id": "55",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to merge k sorted linked lists."
+    "question": "You are an expert programmer. Write a Java program to merge k sorted linked lists."
   },
   {
     "id": "56",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to reverse a linked list."
+    "question": "You are an expert programmer. Write a Java program to reverse a linked list."
   },
   {
     "id": "57",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the middle node of a linked list."
+    "question": "You are an expert programmer. Write a Java program to find the middle node of a linked list."
   },
   {
     "id": "58",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to detect and remove a loop in a linked list."
+    "question": "You are an expert programmer. Write a Java program to detect and remove a loop in a linked list."
   },
   {
     "id": "59",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement a binary search tree (BST)."
+    "question": "You are an expert programmer. Write a Java program to implement a binary search tree (BST)."
   },
   {
     "id": "60",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to perform inorder, preorder, and postorder traversal of a BST."
+    "question": "You are an expert programmer. Write a Java program to perform inorder, preorder, and postorder traversal of a BST."
   },
   {
     "id": "61",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the lowest common ancestor in a BST."
+    "question": "You are an expert programmer. Write a Java program to find the lowest common ancestor in a BST."
   },
   {
     "id": "62",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement a min-heap and max-heap."
+    "question": "You are an expert programmer. Write a Java program to implement a min-heap and max-heap."
   },
   {
     "id": "63",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement graph traversal using BFS."
+    "question": "You are an expert programmer. Write a Java program to implement graph traversal using BFS."
   },
   {
     "id": "64",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement graph traversal using DFS."
+    "question": "You are an expert programmer. Write a Java program to implement graph traversal using DFS."
   },
   {
     "id": "65",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find shortest path in a graph using Dijkstra’s algorithm."
+    "question": "You are an expert programmer. Write a Java program to find shortest path in a graph using Dijkstra’s algorithm."
   },
   {
     "id": "66",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find connected components in an undirected graph."
+    "question": "You are an expert programmer. Write a Java program to find connected components in an undirected graph."
   },
   {
     "id": "67",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to perform topological sort on a directed acyclic graph."
+    "question": "You are an expert programmer. Write a Java program to perform topological sort on a directed acyclic graph."
   },
   {
     "id": "68",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement LRU Cache using LinkedHashMap."
+    "question": "You are an expert programmer. Write a Java program to implement LRU Cache using LinkedHashMap."
   },
   {
     "id": "69",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if a binary tree is height-balanced."
+    "question": "You are an expert programmer. Write a Java program to check if a binary tree is height-balanced."
   },
   {
     "id": "70",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to serialize and deserialize a binary tree."
+    "question": "You are an expert programmer. Write a Java program to serialize and deserialize a binary tree."
   },
   {
     "id": "71",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if a number is prime."
+    "question": "You are an expert programmer. Write a Java program to check if a number is prime."
   },
   {
     "id": "72",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the factorial of a number using recursion."
+    "question": "You are an expert programmer. Write a Java program to find the factorial of a number using recursion."
   },
   {
     "id": "73",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to generate the Fibonacci sequence up to n terms."
+    "question": "You are an expert programmer. Write a Java program to generate the Fibonacci sequence up to n terms."
   },
   {
     "id": "74",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to compute GCD and LCM of two numbers."
+    "question": "You are an expert programmer. Write a Java program to compute GCD and LCM of two numbers."
   },
   {
     "id": "75",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if a number is an Armstrong number."
+    "question": "You are an expert programmer. Write a Java program to check if a number is an Armstrong number."
   },
   {
     "id": "76",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to print Pascal’s triangle."
+    "question": "You are an expert programmer. Write a Java program to print Pascal’s triangle."
   },
   {
     "id": "77",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to check if a number is a perfect number."
+    "question": "You are an expert programmer. Write a Java program to check if a number is a perfect number."
   },
   {
     "id": "78",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to calculate power(x, n) using fast exponentiation."
+    "question": "You are an expert programmer. Write a Java program to calculate power(x, n) using fast exponentiation."
   },
   {
     "id": "79",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to perform matrix multiplication."
+    "question": "You are an expert programmer. Write a Java program to perform matrix multiplication."
   },
   {
     "id": "80",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to rotate a matrix by 90 degrees clockwise."
+    "question": "You are an expert programmer. Write a Java program to rotate a matrix by 90 degrees clockwise."
   },
   {
     "id": "81",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to read a text file and print its contents."
+    "question": "You are an expert programmer. Write a Java program to read a text file and print its contents."
   },
   {
     "id": "82",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to count lines, words, and characters in a file."
+    "question": "You are an expert programmer. Write a Java program to count lines, words, and characters in a file."
   },
   {
     "id": "83",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to copy contents from one file to another."
+    "question": "You are an expert programmer. Write a Java program to copy contents from one file to another."
   },
   {
     "id": "84",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to parse a JSON file and print its keys."
+    "question": "You are an expert programmer. Write a Java program to parse a JSON file and print its keys."
   },
   {
     "id": "85",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to list all files in a directory."
+    "question": "You are an expert programmer. Write a Java program to list all files in a directory."
   },
   {
     "id": "86",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to compress a text file using GZIP."
+    "question": "You are an expert programmer. Write a Java program to compress a text file using GZIP."
   },
   {
     "id": "87",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to send an HTTP GET request and display the response."
+    "question": "You are an expert programmer. Write a Java program to send an HTTP GET request and display the response."
   },
   {
     "id": "88",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to read and write objects using serialization."
+    "question": "You are an expert programmer. Write a Java program to read and write objects using serialization."
   },
   {
     "id": "89",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to sort a list of strings from a file alphabetically."
+    "question": "You are an expert programmer. Write a Java program to sort a list of strings from a file alphabetically."
   },
   {
     "id": "90",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to merge multiple text files into one."
+    "question": "You are an expert programmer. Write a Java program to merge multiple text files into one."
   },
   {
     "id": "91",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to demonstrate multithreading using Runnable."
+    "question": "You are an expert programmer. Write a Java program to demonstrate multithreading using Runnable."
   },
   {
     "id": "92",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to find the sum of elements using Java Streams."
+    "question": "You are an expert programmer. Write a Java program to find the sum of elements using Java Streams."
   },
   {
     "id": "93",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to demonstrate use of CompletableFuture for async computation."
+    "question": "You are an expert programmer. Write a Java program to demonstrate use of CompletableFuture for async computation."
   },
   {
     "id": "94",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to sort a list of custom objects using Comparator and lambda expression."
+    "question": "You are an expert programmer. Write a Java program to sort a list of custom objects using Comparator and lambda expression."
   },
   {
     "id": "95",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement a simple thread-safe singleton pattern."
+    "question": "You are an expert programmer. Write a Java program to implement a simple thread-safe singleton pattern."
   },
   {
     "id": "96",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to demonstrate producer-consumer problem using wait() and notify()."
+    "question": "You are an expert programmer. Write a Java program to demonstrate producer-consumer problem using wait() and notify()."
   },
   {
     "id": "97",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to demonstrate usage of Optional in Java 8."
+    "question": "You are an expert programmer. Write a Java program to demonstrate usage of Optional in Java 8."
   },
   {
     "id": "98",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to demonstrate filtering and mapping operations using Streams."
+    "question": "You are an expert programmer. Write a Java program to demonstrate filtering and mapping operations using Streams."
   },
   {
     "id": "99",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement binary search using generics."
+    "question": "You are an expert programmer. Write a Java program to implement binary search using generics."
   },
   {
     "id": "100",
-    "question": "You are an expert programmer that writes simple, concise code covering all edge cases. Write a Java program to implement a simple thread pool executor."
+    "question": "You are an expert programmer. Write a Java program to implement a simple thread pool executor."
   }
 ]
