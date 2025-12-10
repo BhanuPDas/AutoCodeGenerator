@@ -62,8 +62,12 @@ public class ReadRedisQueue implements Runnable {
             Map<String, StreamEntryID> mID = new HashMap<>();
             mID.put(streamKey, StreamEntryID.XREADGROUP_UNDELIVERED_ENTRY);
             while(isRunning) {
-                List<Map.Entry<String, List<StreamEntry>>> records = jedis.xreadGroup(groupName, consumer, params, mID);
-                processStreamMessage(records);
+                try{
+                    List<Map.Entry<String, List<StreamEntry>>> records = jedis.xreadGroup(groupName, consumer, params, mID);
+                    processStreamMessage(records);
+                }catch (Exception e) {
+                    logger.error("Error while fetching the prompt: {}", e.getMessage());
+                }
             }
 
         } catch (Exception e) {

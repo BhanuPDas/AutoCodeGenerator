@@ -1,402 +1,402 @@
 [
   {
     "id": "1",
-    "question": "Write a Java program to find the second largest element in an array."
+    "question": "Write a Java program to find the second largest element in an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "2",
-    "question": "Write a Java program to find the intersection of two arrays."
+    "question": "Write a Java program to find the intersection of two arrays. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "3",
-    "question": "Write a Java program to merge two sorted arrays without using extra space."
+    "question": "Write a Java program to merge two sorted arrays without using extra space. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "4",
-    "question": "Write a Java program to find the missing number in a sequence of consecutive integers."
+    "question": "Write a Java program to find the missing number in a sequence of consecutive integers. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "5",
-    "question": "Write a Java program to count the number of pairs with a given sum in an array."
+    "question": "Write a Java program to count the number of pairs with a given sum in an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "6",
-    "question": "Write a Java program to move all zeros to the end of the array while maintaining the order of other elements."
+    "question": "Write a Java program to move all zeros to the end of the array while maintaining the order of other elements. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "7",
-    "question": "Write a Java program to rotate an array circularly to the right by k positions."
+    "question": "Write a Java program to rotate an array circularly to the right by k positions. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "8",
-    "question": "Write a Java program to find all subarrays with a given sum."
+    "question": "Write a Java program to find all subarrays with a given sum. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "9",
-    "question": "Write a Java program to implement binary search iteratively and recursively."
+    "question": "Write a Java program to implement binary search iteratively and recursively. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "10",
-    "question": "Write a Java program to sort an array using merge sort."
+    "question": "Write a Java program to sort an array using merge sort. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "11",
-    "question": "Write a Java program to sort an array using quicksort."
+    "question": "Write a Java program to sort an array using quicksort. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "12",
-    "question": "Write a Java program to find the kth smallest element in an array."
+    "question": "Write a Java program to find the kth smallest element in an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "13",
-    "question": "Write a Java program to find the majority element in an array."
+    "question": "Write a Java program to find the majority element in an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "14",
-    "question": "Write a Java program to find duplicates in an array using hashing."
+    "question": "Write a Java program to find duplicates in an array using hashing. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "15",
-    "question": "Write a Java program to merge overlapping intervals."
+    "question": "Write a Java program to merge overlapping intervals. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "16",
-    "question": "Write a Java program to find the longest increasing subsequence in an array."
+    "question": "Write a Java program to find the longest increasing subsequence in an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "17",
-    "question": "Write a Java program to find the maximum product subarray."
+    "question": "Write a Java program to find the maximum product subarray. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "18",
-    "question": "Write a Java program to calculate the prefix sum of an array."
+    "question": "Write a Java program to calculate the prefix sum of an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "19",
-    "question": "Write a Java program to find equilibrium index in an array."
+    "question": "Write a Java program to find equilibrium index in an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "20",
-    "question": "Write a Java program to compute the union and intersection of two arrays."
+    "question": "Write a Java program to compute the union and intersection of two arrays. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "21",
-    "question": "Write a Java program to find the median of two sorted arrays."
+    "question": "Write a Java program to find the median of two sorted arrays. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "22",
-    "question": "Write a Java program to rotate an array circularly and perform multiple queries efficiently."
+    "question": "Write a Java program to rotate an array circularly and perform multiple queries efficiently. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "23",
-    "question": "Write a Java program to find the maximum subarray sum using Kadane’s algorithm."
+    "question": "Write a Java program to find the maximum subarray sum using Kadane’s algorithm. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "24",
-    "question": "Write a Java program to find the peak element in an array."
+    "question": "Write a Java program to find the peak element in an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "25",
-    "question": "Write a Java program to implement the sliding window maximum."
+    "question": "Write a Java program to implement the sliding window maximum. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "26",
-    "question": "Write a Java program to rearrange array elements alternatively (max, min, max, min...)."
+    "question": "Write a Java program to rearrange array elements alternatively (max, min, max, min. Only provide clean Java code, do not add explanatory text or examples.. Only provide clean Java code, do not add explanatory text or examples.. Only provide clean Java code, do not add explanatory text or examples.). Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "27",
-    "question": "Write a Java program to find the first missing positive integer."
+    "question": "Write a Java program to find the first missing positive integer. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "28",
-    "question": "Write a Java program to find the minimum number of jumps to reach the end of an array."
+    "question": "Write a Java program to find the minimum number of jumps to reach the end of an array. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "29",
-    "question": "Write a Java program to find if there exists a pair of elements with sum equal to x."
+    "question": "Write a Java program to find if there exists a pair of elements with sum equal to x. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "30",
-    "question": "Write a Java program to find the number of subarrays with XOR equal to zero."
+    "question": "Write a Java program to find the number of subarrays with XOR equal to zero. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "31",
-    "question": "Write a Java program to reverse a string without using reverse()."
+    "question": "Write a Java program to reverse a string without using reverse(). Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "32",
-    "question": "Write a Java program to check if a string is a palindrome."
+    "question": "Write a Java program to check if a string is a palindrome. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "33",
-    "question": "Write a Java program to count vowels and consonants in a string."
+    "question": "Write a Java program to count vowels and consonants in a string. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "34",
-    "question": "Write a Java program to find the first non-repeating character in a string."
+    "question": "Write a Java program to find the first non-repeating character in a string. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "35",
-    "question": "Write a Java program to find all permutations of a string."
+    "question": "Write a Java program to find all permutations of a string. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "36",
-    "question": "Write a Java program to remove duplicate characters from a string."
+    "question": "Write a Java program to remove duplicate characters from a string. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "37",
-    "question": "Write a Java program to find the longest substring without repeating characters."
+    "question": "Write a Java program to find the longest substring without repeating characters. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "38",
-    "question": "Write a Java program to check if two strings are anagrams."
+    "question": "Write a Java program to check if two strings are anagrams. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "39",
-    "question": "Write a Java program to compress a string (like a2b1c5a3)."
+    "question": "Write a Java program to compress a string (like a2b1c5a3). Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "40",
-    "question": "Write a Java program to check if a string can be rearranged to form a palindrome."
+    "question": "Write a Java program to check if a string can be rearranged to form a palindrome. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "41",
-    "question": "Write a Java program to find the longest common prefix among an array of strings."
+    "question": "Write a Java program to find the longest common prefix among an array of strings. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "42",
-    "question": "Write a Java program to implement pattern matching using the KMP algorithm."
+    "question": "Write a Java program to implement pattern matching using the KMP algorithm. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "43",
-    "question": "Write a Java program to count occurrences of a word in a text file."
+    "question": "Write a Java program to count occurrences of a word in a text file. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "44",
-    "question": "Write a Java program to reverse words in a sentence."
+    "question": "Write a Java program to reverse words in a sentence. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "45",
-    "question": "Write a Java program to capitalize the first letter of every word in a string."
+    "question": "Write a Java program to capitalize the first letter of every word in a string. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "46",
-    "question": "Write a Java program to find the longest palindromic substring."
+    "question": "Write a Java program to find the longest palindromic substring. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "47",
-    "question": "Write a Java program to check if a string is a valid shuffle of two other strings."
+    "question": "Write a Java program to check if a string is a valid shuffle of two other strings. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "48",
-    "question": "Write a Java program to find the smallest window containing all characters of another string."
+    "question": "Write a Java program to find the smallest window containing all characters of another string. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "49",
-    "question": "Write a Java program to remove all special characters from a string."
+    "question": "Write a Java program to remove all special characters from a string. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "50",
-    "question": "Write a Java program to check if one string is a rotation of another."
+    "question": "Write a Java program to check if one string is a rotation of another. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "51",
-    "question": "Write a Java program to implement a stack using arrays."
+    "question": "Write a Java program to implement a stack using arrays. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "52",
-    "question": "Write a Java program to implement a queue using linked list."
+    "question": "Write a Java program to implement a queue using linked list. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "53",
-    "question": "Write a Java program to implement a priority queue."
+    "question": "Write a Java program to implement a priority queue. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "54",
-    "question": "Write a Java program to detect a cycle in a linked list."
+    "question": "Write a Java program to detect a cycle in a linked list. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "55",
-    "question": "Write a Java program to merge k sorted linked lists."
+    "question": "Write a Java program to merge k sorted linked lists. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "56",
-    "question": "Write a Java program to reverse a linked list."
+    "question": "Write a Java program to reverse a linked list. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "57",
-    "question": "Write a Java program to find the middle node of a linked list."
+    "question": "Write a Java program to find the middle node of a linked list. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "58",
-    "question": "Write a Java program to detect and remove a loop in a linked list."
+    "question": "Write a Java program to detect and remove a loop in a linked list. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "59",
-    "question": "Write a Java program to implement a binary search tree (BST)."
+    "question": "Write a Java program to implement a binary search tree (BST). Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "60",
-    "question": "Write a Java program to perform inorder, preorder, and postorder traversal of a BST."
+    "question": "Write a Java program to perform inorder, preorder, and postorder traversal of a BST. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "61",
-    "question": "Write a Java program to find the lowest common ancestor in a BST."
+    "question": "Write a Java program to find the lowest common ancestor in a BST. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "62",
-    "question": "Write a Java program to implement a min-heap and max-heap."
+    "question": "Write a Java program to implement a min-heap and max-heap. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "63",
-    "question": "Write a Java program to implement graph traversal using BFS."
+    "question": "Write a Java program to implement graph traversal using BFS. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "64",
-    "question": "Write a Java program to implement graph traversal using DFS."
+    "question": "Write a Java program to implement graph traversal using DFS. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "65",
-    "question": "Write a Java program to find shortest path in a graph using Dijkstra’s algorithm."
+    "question": "Write a Java program to find shortest path in a graph using Dijkstra’s algorithm. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "66",
-    "question": "Write a Java program to find connected components in an undirected graph."
+    "question": "Write a Java program to find connected components in an undirected graph. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "67",
-    "question": "Write a Java program to perform topological sort on a directed acyclic graph."
+    "question": "Write a Java program to perform topological sort on a directed acyclic graph. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "68",
-    "question": "Write a Java program to implement LRU Cache using LinkedHashMap."
+    "question": "Write a Java program to implement LRU Cache using LinkedHashMap. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "69",
-    "question": "Write a Java program to check if a binary tree is height-balanced."
+    "question": "Write a Java program to check if a binary tree is height-balanced. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "70",
-    "question": "Write a Java program to serialize and deserialize a binary tree."
+    "question": "Write a Java program to serialize and deserialize a binary tree. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "71",
-    "question": "Write a Java program to check if a number is prime."
+    "question": "Write a Java program to check if a number is prime. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "72",
-    "question": "Write a Java program to find the factorial of a number using recursion."
+    "question": "Write a Java program to find the factorial of a number using recursion. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "73",
-    "question": "Write a Java program to generate the Fibonacci sequence up to n terms."
+    "question": "Write a Java program to generate the Fibonacci sequence up to n terms. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "74",
-    "question": "Write a Java program to compute GCD and LCM of two numbers."
+    "question": "Write a Java program to compute GCD and LCM of two numbers. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "75",
-    "question": "Write a Java program to check if a number is an Armstrong number."
+    "question": "Write a Java program to check if a number is an Armstrong number. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "76",
-    "question": "Write a Java program to print Pascal’s triangle."
+    "question": "Write a Java program to print Pascal’s triangle. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "77",
-    "question": "Write a Java program to check if a number is a perfect number."
+    "question": "Write a Java program to check if a number is a perfect number. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "78",
-    "question": "Write a Java program to calculate power(x, n) using fast exponentiation."
+    "question": "Write a Java program to calculate power(x, n) using fast exponentiation. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "79",
-    "question": "Write a Java program to perform matrix multiplication."
+    "question": "Write a Java program to perform matrix multiplication. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "80",
-    "question": "Write a Java program to rotate a matrix by 90 degrees clockwise."
+    "question": "Write a Java program to rotate a matrix by 90 degrees clockwise. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "81",
-    "question": "Write a Java program to read a text file and print its contents."
+    "question": "Write a Java program to read a text file and print its contents. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "82",
-    "question": "Write a Java program to count lines, words, and characters in a file."
+    "question": "Write a Java program to count lines, words, and characters in a file. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "83",
-    "question": "Write a Java program to copy contents from one file to another."
+    "question": "Write a Java program to copy contents from one file to another. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "84",
-    "question": "Write a Java program to parse a JSON file and print its keys."
+    "question": "Write a Java program to parse a JSON file and print its keys. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "85",
-    "question": "Write a Java program to list all files in a directory."
+    "question": "Write a Java program to list all files in a directory. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "86",
-    "question": "Write a Java program to compress a text file using GZIP."
+    "question": "Write a Java program to compress a text file using GZIP. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "87",
-    "question": "Write a Java program to send an HTTP GET request and display the response."
+    "question": "Write a Java program to send an HTTP GET request and display the response. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "88",
-    "question": "Write a Java program to read and write objects using serialization."
+    "question": "Write a Java program to read and write objects using serialization. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "89",
-    "question": "Write a Java program to sort a list of strings from a file alphabetically."
+    "question": "Write a Java program to sort a list of strings from a file alphabetically. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "90",
-    "question": "Write a Java program to merge multiple text files into one."
+    "question": "Write a Java program to merge multiple text files into one. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "91",
-    "question": "Write a Java program to demonstrate multithreading using Runnable."
+    "question": "Write a Java program to demonstrate multithreading using Runnable. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "92",
-    "question": "Write a Java program to find the sum of elements using Java Streams."
+    "question": "Write a Java program to find the sum of elements using Java Streams. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "93",
-    "question": "Write a Java program to demonstrate use of CompletableFuture for async computation."
+    "question": "Write a Java program to demonstrate use of CompletableFuture for async computation. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "94",
-    "question": "Write a Java program to sort a list of custom objects using Comparator and lambda expression."
+    "question": "Write a Java program to sort a list of custom objects using Comparator and lambda expression. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "95",
-    "question": "Write a Java program to implement a simple thread-safe singleton pattern."
+    "question": "Write a Java program to implement a simple thread-safe singleton pattern. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "96",
-    "question": "Write a Java program to demonstrate producer-consumer problem using wait() and notify()."
+    "question": "Write a Java program to demonstrate producer-consumer problem using wait() and notify(). Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "97",
-    "question": "Write a Java program to demonstrate usage of Optional in Java 8."
+    "question": "Write a Java program to demonstrate usage of Optional in Java 8. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "98",
-    "question": "Write a Java program to demonstrate filtering and mapping operations using Streams."
+    "question": "Write a Java program to demonstrate filtering and mapping operations using Streams. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "99",
-    "question": "Write a Java program to implement binary search using generics."
+    "question": "Write a Java program to implement binary search using generics. Only provide clean Java code, do not add explanatory text or examples."
   },
   {
     "id": "100",
-    "question": "Write a Java program to implement a simple thread pool executor."
+    "question": "Write a Java program to implement a simple thread pool executor. Only provide clean Java code, do not add explanatory text or examples."
   }
 ]
