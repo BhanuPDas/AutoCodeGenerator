@@ -6,9 +6,11 @@ import de.fhdortmund.codegenerator.repository.InferenceRepository;
 import de.fhdortmund.codegenerator.requests.Prompts;
 import de.fhdortmund.codegenerator.util.GenerateMetrics;
 import de.fhdortmund.codegenerator.util.WriteJavaFiles;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,8 +21,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.Executor;
 
 @Service
 public class InferenceService {
@@ -35,15 +36,17 @@ public class InferenceService {
     @Value("${inference.url}")
     private String inferenceUrl;
     private final InferenceRepository irepo;
+    private final Executor exec;
 
     @Autowired
     public InferenceService(RestTemplate rest, GenerateMetrics metrics, WriteJavaFiles jfiles,
-                            UnifiedJedis jedis, InferenceRepository irepo) {
+                            UnifiedJedis jedis, InferenceRepository irepo, @Qualifier("execThread") Executor exec) {
         this.rest = rest;
         this.metrics = metrics;
         this.jfiles = jfiles;
         this.jedis = jedis;
         this.irepo = irepo;
+        this.exec = exec;
     }
 
     public String addToQueue(Prompts req) {
@@ -84,13 +87,12 @@ public class InferenceService {
         }
     }
 
-    @PostConstruct
+    @EventListener(ApplicationReadyEvent.class)
     public void fetchPromptQueue() {
         String consumer = "c1";
         try {
             createGroup();
-            ExecutorService service = Executors.newSingleThreadExecutor();
-            service.submit(new ReadRedisQueue(jedis, groupName, consumer, streamKey, inferenceUrl, rest, metrics, jfiles, irepo));
+            exec.execute(new ReadRedisQueue(jedis, groupName, consumer, streamKey, inferenceUrl, rest, metrics, jfiles, irepo));
         } catch (Exception ex) {
             logger.error("Exception occurred while creating a thread to read from redis: {}", ex.getMessage());
         }
