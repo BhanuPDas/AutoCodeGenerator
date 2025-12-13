@@ -1,402 +1,402 @@
 [
   {
     "id": "1",
-    "question": "Write a Java program to find the second largest element in an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the second largest element in an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "2",
-    "question": "Write a Java program to find the intersection of two arrays. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the intersection of two arrays. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "3",
-    "question": "Write a Java program to merge two sorted arrays without using extra space. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to merge two sorted arrays without using extra space. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "4",
-    "question": "Write a Java program to find the missing number in a sequence of consecutive integers. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the missing number in a sequence of consecutive integers. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "5",
-    "question": "Write a Java program to count the number of pairs with a given sum in an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to count the number of pairs with a given sum in an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "6",
-    "question": "Write a Java program to move all zeros to the end of the array while maintaining the order of other elements. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to move all zeros to the end of the array while maintaining the order of other elements. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "7",
-    "question": "Write a Java program to rotate an array circularly to the right by k positions. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to rotate an array circularly to the right by k positions. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "8",
-    "question": "Write a Java program to find all subarrays with a given sum. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find all subarrays with a given sum. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "9",
-    "question": "Write a Java program to implement binary search iteratively and recursively. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement binary search iteratively and recursively. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "10",
-    "question": "Write a Java program to sort an array using merge sort. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to sort an array using merge sort. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "11",
-    "question": "Write a Java program to sort an array using quicksort. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to sort an array using quicksort. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "12",
-    "question": "Write a Java program to find the kth smallest element in an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the kth smallest element in an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "13",
-    "question": "Write a Java program to find the majority element in an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the majority element in an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "14",
-    "question": "Write a Java program to find duplicates in an array using hashing. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find duplicates in an array using hashing. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "15",
-    "question": "Write a Java program to merge overlapping intervals. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to merge overlapping intervals. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "16",
-    "question": "Write a Java program to find the longest increasing subsequence in an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the longest increasing subsequence in an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "17",
-    "question": "Write a Java program to find the maximum product subarray. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the maximum product subarray. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "18",
-    "question": "Write a Java program to calculate the prefix sum of an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to calculate the prefix sum of an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "19",
-    "question": "Write a Java program to find equilibrium index in an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find equilibrium index in an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "20",
-    "question": "Write a Java program to compute the union and intersection of two arrays. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to compute the union and intersection of two arrays. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "21",
-    "question": "Write a Java program to find the median of two sorted arrays. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the median of two sorted arrays. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "22",
-    "question": "Write a Java program to rotate an array circularly and perform multiple queries efficiently. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to rotate an array circularly and perform multiple queries efficiently. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "23",
-    "question": "Write a Java program to find the maximum subarray sum using Kadane’s algorithm. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the maximum subarray sum using Kadane’s algorithm. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "24",
-    "question": "Write a Java program to find the peak element in an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the peak element in an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "25",
-    "question": "Write a Java program to implement the sliding window maximum. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement the sliding window maximum. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "26",
-    "question": "Write a Java program to rearrange array elements alternatively (max, min, max, min. Only provide clean Java code, do not add explanatory text or examples.. Only provide clean Java code, do not add explanatory text or examples.. Only provide clean Java code, do not add explanatory text or examples.). Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to rearrange array elements alternatively (max, min, max, min). Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "27",
-    "question": "Write a Java program to find the first missing positive integer. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the first missing positive integer. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "28",
-    "question": "Write a Java program to find the minimum number of jumps to reach the end of an array. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the minimum number of jumps to reach the end of an array. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "29",
-    "question": "Write a Java program to find if there exists a pair of elements with sum equal to x. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find if there exists a pair of elements with sum equal to x. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "30",
-    "question": "Write a Java program to find the number of subarrays with XOR equal to zero. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the number of subarrays with XOR equal to zero. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "31",
-    "question": "Write a Java program to reverse a string without using reverse(). Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to reverse a string without using reverse(). Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "32",
-    "question": "Write a Java program to check if a string is a palindrome. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if a string is a palindrome. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "33",
-    "question": "Write a Java program to count vowels and consonants in a string. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to count vowels and consonants in a string. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "34",
-    "question": "Write a Java program to find the first non-repeating character in a string. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the first non-repeating character in a string. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "35",
-    "question": "Write a Java program to find all permutations of a string. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find all permutations of a string. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "36",
-    "question": "Write a Java program to remove duplicate characters from a string. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to remove duplicate characters from a string. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "37",
-    "question": "Write a Java program to find the longest substring without repeating characters. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the longest substring without repeating characters. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "38",
-    "question": "Write a Java program to check if two strings are anagrams. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if two strings are anagrams. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "39",
-    "question": "Write a Java program to compress a string (like a2b1c5a3). Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to compress a string (like a2b1c5a3). Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "40",
-    "question": "Write a Java program to check if a string can be rearranged to form a palindrome. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if a string can be rearranged to form a palindrome. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "41",
-    "question": "Write a Java program to find the longest common prefix among an array of strings. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the longest common prefix among an array of strings. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "42",
-    "question": "Write a Java program to implement pattern matching using the KMP algorithm. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement pattern matching using the KMP algorithm. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "43",
-    "question": "Write a Java program to count occurrences of a word in a text file. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to count occurrences of a word in a text file. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "44",
-    "question": "Write a Java program to reverse words in a sentence. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to reverse words in a sentence. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "45",
-    "question": "Write a Java program to capitalize the first letter of every word in a string. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to capitalize the first letter of every word in a string. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "46",
-    "question": "Write a Java program to find the longest palindromic substring. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the longest palindromic substring. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "47",
-    "question": "Write a Java program to check if a string is a valid shuffle of two other strings. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if a string is a valid shuffle of two other strings. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "48",
-    "question": "Write a Java program to find the smallest window containing all characters of another string. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the smallest window containing all characters of another string. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "49",
-    "question": "Write a Java program to remove all special characters from a string. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to remove all special characters from a string. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "50",
-    "question": "Write a Java program to check if one string is a rotation of another. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if one string is a rotation of another. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "51",
-    "question": "Write a Java program to implement a stack using arrays. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement a stack using arrays. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "52",
-    "question": "Write a Java program to implement a queue using linked list. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement a queue using linked list. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "53",
-    "question": "Write a Java program to implement a priority queue. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement a priority queue. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "54",
-    "question": "Write a Java program to detect a cycle in a linked list. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to detect a cycle in a linked list. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "55",
-    "question": "Write a Java program to merge k sorted linked lists. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to merge k sorted linked lists. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "56",
-    "question": "Write a Java program to reverse a linked list. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to reverse a linked list. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "57",
-    "question": "Write a Java program to find the middle node of a linked list. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the middle node of a linked list. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "58",
-    "question": "Write a Java program to detect and remove a loop in a linked list. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to detect and remove a loop in a linked list. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "59",
-    "question": "Write a Java program to implement a binary search tree (BST). Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement a binary search tree (BST). Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "60",
-    "question": "Write a Java program to perform inorder, preorder, and postorder traversal of a BST. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to perform inorder, preorder, and postorder traversal of a BST. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "61",
-    "question": "Write a Java program to find the lowest common ancestor in a BST. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the lowest common ancestor in a BST. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "62",
-    "question": "Write a Java program to implement a min-heap and max-heap. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement a min-heap and max-heap. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "63",
-    "question": "Write a Java program to implement graph traversal using BFS. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement graph traversal using BFS. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "64",
-    "question": "Write a Java program to implement graph traversal using DFS. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement graph traversal using DFS. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "65",
-    "question": "Write a Java program to find shortest path in a graph using Dijkstra’s algorithm. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find shortest path in a graph using Dijkstra’s algorithm. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "66",
-    "question": "Write a Java program to find connected components in an undirected graph. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find connected components in an undirected graph. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "67",
-    "question": "Write a Java program to perform topological sort on a directed acyclic graph. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to perform topological sort on a directed acyclic graph. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "68",
-    "question": "Write a Java program to implement LRU Cache using LinkedHashMap. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement LRU Cache using LinkedHashMap. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "69",
-    "question": "Write a Java program to check if a binary tree is height-balanced. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if a binary tree is height-balanced. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "70",
-    "question": "Write a Java program to serialize and deserialize a binary tree. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to serialize and deserialize a binary tree. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "71",
-    "question": "Write a Java program to check if a number is prime. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if a number is prime. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "72",
-    "question": "Write a Java program to find the factorial of a number using recursion. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the factorial of a number using recursion. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "73",
-    "question": "Write a Java program to generate the Fibonacci sequence up to n terms. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to generate the Fibonacci sequence up to n terms. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "74",
-    "question": "Write a Java program to compute GCD and LCM of two numbers. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to compute GCD and LCM of two numbers. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "75",
-    "question": "Write a Java program to check if a number is an Armstrong number. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if a number is an Armstrong number. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "76",
-    "question": "Write a Java program to print Pascal’s triangle. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to print Pascal’s triangle. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "77",
-    "question": "Write a Java program to check if a number is a perfect number. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to check if a number is a perfect number. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "78",
-    "question": "Write a Java program to calculate power(x, n) using fast exponentiation. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to calculate power(x, n) using fast exponentiation. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "79",
-    "question": "Write a Java program to perform matrix multiplication. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to perform matrix multiplication. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "80",
-    "question": "Write a Java program to rotate a matrix by 90 degrees clockwise. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to rotate a matrix by 90 degrees clockwise. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "81",
-    "question": "Write a Java program to read a text file and print its contents. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to read a text file and print its contents. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "82",
-    "question": "Write a Java program to count lines, words, and characters in a file. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to count lines, words, and characters in a file. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "83",
-    "question": "Write a Java program to copy contents from one file to another. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to copy contents from one file to another. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "84",
-    "question": "Write a Java program to parse a JSON file and print its keys. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to parse a JSON file and print its keys. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "85",
-    "question": "Write a Java program to list all files in a directory. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to list all files in a directory. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "86",
-    "question": "Write a Java program to compress a text file using GZIP. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to compress a text file using GZIP. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "87",
-    "question": "Write a Java program to send an HTTP GET request and display the response. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to send an HTTP GET request and display the response. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "88",
-    "question": "Write a Java program to read and write objects using serialization. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to read and write objects using serialization. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "89",
-    "question": "Write a Java program to sort a list of strings from a file alphabetically. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to sort a list of strings from a file alphabetically. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "90",
-    "question": "Write a Java program to merge multiple text files into one. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to merge multiple text files into one. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "91",
-    "question": "Write a Java program to demonstrate multithreading using Runnable. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to demonstrate multithreading using Runnable. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "92",
-    "question": "Write a Java program to find the sum of elements using Java Streams. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to find the sum of elements using Java Streams. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "93",
-    "question": "Write a Java program to demonstrate use of CompletableFuture for async computation. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to demonstrate use of CompletableFuture for async computation. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "94",
-    "question": "Write a Java program to sort a list of custom objects using Comparator and lambda expression. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to sort a list of custom objects using Comparator and lambda expression. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "95",
-    "question": "Write a Java program to implement a simple thread-safe singleton pattern. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement a simple thread-safe singleton pattern. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "96",
-    "question": "Write a Java program to demonstrate producer-consumer problem using wait() and notify(). Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to demonstrate producer-consumer problem using wait() and notify(). Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "97",
-    "question": "Write a Java program to demonstrate usage of Optional in Java 8. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to demonstrate usage of Optional in Java 8. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "98",
-    "question": "Write a Java program to demonstrate filtering and mapping operations using Streams. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to demonstrate filtering and mapping operations using Streams. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "99",
-    "question": "Write a Java program to implement binary search using generics. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement binary search using generics. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   },
   {
     "id": "100",
-    "question": "Write a Java program to implement a simple thread pool executor. Only provide clean Java code, do not add explanatory text or examples."
+    "question": "Write a complete and valid Java program to implement a simple thread pool executor. Provide only the Java code with a properly structured class, including a main method. Do not include any explanations, comments, or examples. Always return a full, non-empty Java program."
   }
 ]
