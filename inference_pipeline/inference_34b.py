@@ -25,7 +25,7 @@ def generate_code(request: PromptRequest):
     usage_log = []
     state = {"monitoring": True}
 
-    def monitor(interval=0.01):
+    def monitor(interval=0.2):
         while state["monitoring"]:
             usage_log.append(gpu_stats.get_gpu_stats())
             time.sleep(interval)
@@ -41,7 +41,7 @@ def generate_code(request: PromptRequest):
         input_length = inputs["input_ids"].shape[-1]
         max_context_length = 4096
         remaining_length = max_context_length - input_length
-        max_new_tokens = max(200, int(remaining_length * 0.9))
+        max_new_tokens = min(512, max(128, remaining_length - 64))
 
         outputs = llm.generate(
             **inputs,
@@ -52,8 +52,11 @@ def generate_code(request: PromptRequest):
         )
 
         gen_ids = outputs[0][inputs["input_ids"].shape[-1]:]
-        result = tokenizer.decode(outputs[0], skip_special_tokens=True)
+        result = tokenizer.decode(gen_ids, skip_special_tokens=True)
         end = time.perf_counter()
+        del outputs
+        del inputs
+        torch.cuda.empty_cache()
 
         execution_time = end - start
         num_tokens = len(gen_ids)

@@ -54,7 +54,7 @@ public class ReadRedisQueue implements Runnable {
     public void run() {
         logger.info("Attempting to fetch queued prompts from Redis..");
         try {
-            XReadGroupParams params = new XReadGroupParams().count(20).block(0);
+            XReadGroupParams params = new XReadGroupParams().count(1).block(0);
             Map<String, StreamEntryID> bID = new HashMap<>();
             bID.put(streamKey, new StreamEntryID("0-0"));
             List<Map.Entry<String, List<StreamEntry>>> recordsPen = jedis.xreadGroup(groupName, consumer, params, bID);
@@ -138,7 +138,7 @@ public class ReadRedisQueue implements Runnable {
     }
 
     private void pollToFetchPrompt() {
-        XReadGroupParams params = new XReadGroupParams().count(25).block(2);
+        XReadGroupParams params = new XReadGroupParams().count(1).block(2);
         Map<String, StreamEntryID> mID = new HashMap<>();
         mID.put(streamKey, StreamEntryID.XREADGROUP_UNDELIVERED_ENTRY);
         try {

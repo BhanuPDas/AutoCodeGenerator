@@ -38,9 +38,9 @@ public class CodeGeneratorApplication {
                 .evictIdleConnections(TimeValue.ofSeconds(200))
                 .build();
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
-        requestFactory.setReadTimeout(30000);
-        requestFactory.setConnectTimeout(5000);
-        requestFactory.setConnectionRequestTimeout(5000);
+        requestFactory.setReadTimeout(120000);
+        requestFactory.setConnectTimeout(10000);
+        requestFactory.setConnectionRequestTimeout(10000);
         return restBuilder.requestFactory(() -> requestFactory).build();
     }
 
