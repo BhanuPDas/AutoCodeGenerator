@@ -36,7 +36,7 @@ def generate_code(request: PromptRequest):
 
     try:
         start = time.perf_counter()
-        formatted_prompt = f"Task: {request.prompt.strip()}"
+        formatted_prompt = f"<s>[INST]\n{request.prompt.strip()}\n[/INST]"
         inputs = tokenizer(formatted_prompt, return_tensors="pt").to(llm.device)
         input_length = inputs["input_ids"].shape[-1]
         max_context_length = 4096
@@ -48,11 +48,14 @@ def generate_code(request: PromptRequest):
             do_sample=False,
             num_return_sequences=1,
             eos_token_id=tokenizer.eos_token_id,
+            min_new_tokens=100,
             max_new_tokens=max_new_tokens,
         )
 
         gen_ids = outputs[0][inputs["input_ids"].shape[-1]:]
         result = tokenizer.decode(gen_ids, skip_special_tokens=True)
+        if not result.strip():
+            result = tokenizer.decode(outputs[0], skip_special_tokens=True)
         end = time.perf_counter()
         del outputs
         del inputs
