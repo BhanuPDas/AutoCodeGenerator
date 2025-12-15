@@ -11,7 +11,6 @@ import de.fhdortmund.codegenerator.util.WriteJavaFiles;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.*;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.client.RestTemplate;
 import redis.clients.jedis.StreamEntryID;
 import redis.clients.jedis.UnifiedJedis;
@@ -55,12 +54,16 @@ public class ReadRedisQueue implements Runnable {
     public void run() {
         logger.info("Attempting to fetch queued prompts from Redis..");
         try {
-            XReadGroupParams params = new XReadGroupParams().count(30).block(5000);
+            XReadGroupParams params = new XReadGroupParams().count(20).block(0);
             Map<String, StreamEntryID> bID = new HashMap<>();
             bID.put(streamKey, new StreamEntryID("0-0"));
             List<Map.Entry<String, List<StreamEntry>>> recordsPen = jedis.xreadGroup(groupName, consumer, params, bID);
-            if (recordsPen!= null && !recordsPen.isEmpty())
+            if (recordsPen!= null && !recordsPen.isEmpty()) {
                 processStreamMessage(recordsPen);
+            }
+            while(!Thread.currentThread().isInterrupted()) {
+                pollToFetchPrompt();
+            }
         } catch (Exception e) {
             logger.error("Error while trying to read pending records from redis: {}", e.getMessage());
         }
@@ -68,7 +71,7 @@ public class ReadRedisQueue implements Runnable {
 
     private void saveResultInDB(List<InferenceEntity> iEntityList) {
         try {
-            if (iEntityList != null) {
+            if (iEntityList != null && !iEntityList.isEmpty()) {
                 logger.info("Saving results into DB.");
                 irepo.saveAll(iEntityList);
             }
@@ -134,9 +137,8 @@ public class ReadRedisQueue implements Runnable {
         saveResultInDB(iEntityList);
     }
 
-    @Scheduled(fixedDelay = 30*60*1000)
     private void pollToFetchPrompt() {
-        XReadGroupParams params = new XReadGroupParams().count(25).block(0);
+        XReadGroupParams params = new XReadGroupParams().count(25).block(2);
         Map<String, StreamEntryID> mID = new HashMap<>();
         mID.put(streamKey, StreamEntryID.XREADGROUP_UNDELIVERED_ENTRY);
         try {
