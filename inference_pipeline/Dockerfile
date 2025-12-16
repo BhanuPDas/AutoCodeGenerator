@@ -1,5 +1,4 @@
-#FROM python:3.12.8
-FROM python:3.10.19
+FROM python:3.12.8
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \

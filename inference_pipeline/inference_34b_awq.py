@@ -1,5 +1,5 @@
-from transformers import AutoTokenizer
-from awq import AutoAWQForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from llm_compressor import AWQQuantizer
 import torch
 from fastapi import FastAPI
 from prompt_request_model import PromptRequest
@@ -10,14 +10,15 @@ import threading
 
 app = FastAPI()
 model = "TheBloke/CodeLlama-34B-Instruct-AWQ"
+qModel = "CodeLlama-34B-AWQ-4bit"
+quantizer = AWQQuantizer(model_name=model)
+quantizer.quantize(bits=4, act_order=True)  # 4-bit AWQ
+quantizer.save_pretrained(qModel)
 
-tokenizer = AutoTokenizer.from_pretrained(model,use_fast=False)
-tokenizer.pad_token_id = tokenizer.eos_token_id
-llm = AutoAWQForCausalLM.from_quantized(
-    model,
-    fuse_layers=True,
-    trust_remote_code=False,
-    safetensors=True,
+tokenizer = AutoTokenizer.from_pretrained(qModel)
+llm = AutoModelForCausalLM.from_pretrained(
+    qModel,
+    trust_remote_code=True,
     device_map={"": "cuda:0"},
 )
 generation_lock = threading.Lock()
@@ -45,7 +46,7 @@ def generate_code(request: PromptRequest):
         remaining_length = max_context_length - input_length
         max_new_tokens = min(512, max(128, remaining_length - 64))
 
-        with generation_lock:
+        with generation_lock, torch.inference_mode():
             outputs = llm.generate(
                 **inputs,
                 do_sample=False,
