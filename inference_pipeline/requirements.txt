@@ -7,4 +7,3 @@ nvidia-ml-py
 sentencepiece
 protobuf==4.25.3
 vllm
-llm_compressor
