@@ -18,7 +18,6 @@ llm = AutoAWQForCausalLM.from_quantized(
     fuse_layers=True,
     trust_remote_code=False,
     safetensors=True,
-    dtype=torch.float16,
     device_map={"": "cuda:0"},
 )
 generation_lock = threading.Lock()
