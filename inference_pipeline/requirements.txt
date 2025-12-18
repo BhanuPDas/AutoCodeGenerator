@@ -6,3 +6,4 @@ accelerate==0.33.0
 nvidia-ml-py
 sentencepiece
 protobuf==4.25.3
+optimum

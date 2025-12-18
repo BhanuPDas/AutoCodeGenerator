@@ -11,7 +11,7 @@ app = FastAPI()
 model = "TheBloke/CodeLlama-34B-Instruct-GPTQ"
 llm = AutoModelForCausalLM.from_pretrained(model,
                                            device_map="auto",
-                                           torch_dtype=torch.float16,
+                                           dtype=torch.float16,
                                            trust_remote_code=False,
                                            revision="gptq-8bit-128g-actorder_True")
 tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
