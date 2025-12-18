@@ -9,10 +9,13 @@ import threading
 app = FastAPI()
 model = "TheBloke/CodeLlama-34B-Instruct-AWQ"
 llm = LLM(model=model,
-          quantization="awq",
+          quantization="awq_marlin",
           dtype="float16",
+          max_seq_len=4096,
           seed=0)
-sampling_params = SamplingParams(temperature=0.7,top_p=0.95, max_tokens=1024)
+sampling_params = SamplingParams(temperature=0.7,
+                                 top_p=0.95,
+                                 max_tokens=512)
 
 @app.post("/generate")
 def generate_code(request: PromptRequest):
