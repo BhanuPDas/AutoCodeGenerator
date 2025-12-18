@@ -12,7 +12,9 @@ llm = LLM(model=model,
           quantization="awq",
           dtype="float16",
           max_model_len=4096,
-          max_num_batched_tokens=4096,
+          max_num_batched_tokens=2048,
+          enable_chunked_prefill=False,
+          enable_prefix_caching=False,
           seed=0)
 sampling_params = SamplingParams(temperature=0.7,top_p=0.95)
 
