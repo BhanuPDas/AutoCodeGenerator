@@ -8,7 +8,12 @@ import threading
 
 app = FastAPI()
 model = "TheBloke/CodeLlama-34B-Instruct-AWQ"
-llm = LLM(model=model, quantization="awq", dtype="float16", seed=0)
+llm = LLM(model=model,
+          quantization="awq",
+          dtype="float16",
+          max_model_len=4096,
+          max_num_batched_tokens=4096,
+          seed=0)
 sampling_params = SamplingParams(temperature=0.7,top_p=0.95)
 
 @app.post("/generate")
