@@ -1,22 +1,20 @@
-from vllm import LLM, SamplingParams
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from fastapi import FastAPI
 from prompt_request_model import PromptRequest
 from prompt_response_model import PromptResponse
 import time
 import gpu_stats
 import threading
+import torch
 
 app = FastAPI()
-model = "TheBloke/CodeLlama-34B-Instruct-AWQ"
-llm = LLM(model=model,
-          quantization="awq",
-          dtype="float16",
-          max_model_len=4096,
-          max_num_batched_tokens=4096,
-          seed=0)
-sampling_params = SamplingParams(temperature=0.7,
-                                 top_p=0.95,
-                                 max_tokens=512)
+model = "TheBloke/CodeLlama-34B-Instruct-GPTQ"
+llm = AutoModelForCausalLM.from_pretrained(model,
+                                           device_map="auto",
+                                           torch_dtype=torch.float16,
+                                           trust_remote_code=False,
+                                           revision="gptq-8bit-128g-actorder_True")
+tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
 
 @app.post("/generate")
 def generate_code(request: PromptRequest):
@@ -35,10 +33,24 @@ def generate_code(request: PromptRequest):
     try:
         start = time.perf_counter()
         formatted_prompt = f"<s>[INST]\n{request.prompt.strip()}\n[/INST]"
-        prompts = [formatted_prompt]
-        outputs = llm.generate(prompts, sampling_params)
+        inputs = tokenizer(formatted_prompt, return_tensors='pt').to(llm.device)
+        input_length = inputs["input_ids"].shape[-1]
+        max_context_length = 4096
+        remaining_length = max_context_length - input_length
+        max_new_tokens = min(512, max(128, remaining_length - 64))
+        outputs = llm.generate(
+            **inputs,
+            do_sample=False,
+            num_return_sequences=1,
+            eos_token_id=tokenizer.eos_token_id,
+            min_new_tokens=100,
+            max_new_tokens=max_new_tokens,
+        )
 
-        result = outputs[0].outputs[0].text
+        gen_ids = outputs[0][inputs["input_ids"].shape[-1]:]
+        result = tokenizer.decode(gen_ids, skip_special_tokens=True)
+        if not result.strip():
+            result = tokenizer.decode(outputs[0], skip_special_tokens=True)
         end = time.perf_counter()
         del outputs
 
