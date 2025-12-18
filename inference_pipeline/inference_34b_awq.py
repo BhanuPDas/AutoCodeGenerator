@@ -11,7 +11,8 @@ model = "TheBloke/CodeLlama-34B-Instruct-AWQ"
 llm = LLM(model=model,
           quantization="awq_marlin",
           dtype="float16",
-          max_seq_len=4096,
+          max_model_len=4096,
+          max_num_batched_tokens=4096,
           seed=0)
 sampling_params = SamplingParams(temperature=0.7,
                                  top_p=0.95,
