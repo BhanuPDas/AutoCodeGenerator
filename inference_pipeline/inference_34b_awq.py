@@ -9,7 +9,7 @@ import threading
 app = FastAPI()
 model = "TheBloke/CodeLlama-34B-Instruct-AWQ"
 llm = LLM(model=model,
-          quantization="awq_marlin",
+          quantization="awq",
           dtype="float16",
           max_model_len=4096,
           max_num_batched_tokens=4096,
