@@ -12,7 +12,7 @@ llm = LLM(model=model,
           quantization="awq",
           dtype="float16",
           seed=0)
-sampling_params = SamplingParams(temperature=0.7,top_p=0.95)
+sampling_params = SamplingParams(temperature=0.7,top_p=0.95, max_tokens=1024)
 
 @app.post("/generate")
 def generate_code(request: PromptRequest):
