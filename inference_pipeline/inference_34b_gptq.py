@@ -1,4 +1,4 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, GPTQConfig
 from fastapi import FastAPI
 from prompt_request_model import PromptRequest
 from prompt_response_model import PromptResponse
@@ -9,12 +9,15 @@ import torch
 
 app = FastAPI()
 model = "TheBloke/CodeLlama-34B-Instruct-GPTQ"
+quantization_config = GPTQConfig(bits=8, desc_act=False, act_group_aware=True)
 llm = AutoModelForCausalLM.from_pretrained(model,
                                            device_map="auto",
                                            dtype=torch.float16,
                                            trust_remote_code=False,
+                                           quantization_config=quantization_config,
                                            revision="gptq-8bit-128g-actorder_True")
 tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
+
 
 @app.post("/generate")
 def generate_code(request: PromptRequest):
