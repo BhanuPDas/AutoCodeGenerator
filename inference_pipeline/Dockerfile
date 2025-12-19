@@ -1,5 +1,5 @@
-#FROM python:3.12.8
-FROM python:3.11
+#FROM python:3.12.8 #For codellama-34B
+FROM python:3.11 #For GPTQ
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
@@ -16,4 +16,4 @@ RUN python -c 'from huggingface_hub import login; import os; login(token=os.gete
 COPY . .
 EXPOSE 5050
 #CMD ["uvicorn", "inference_34b:app", "--host", "0.0.0.0", "--port", "5050"]
-CMD ["uvicorn", "inference_34b_awq:app", "--host", "0.0.0.0", "--port", "5050"]
+CMD ["uvicorn", "inference_34b_gptq:app", "--host", "0.0.0.0", "--port", "5050"]
