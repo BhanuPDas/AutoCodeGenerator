@@ -9,14 +9,14 @@ import torch
 
 app = FastAPI()
 model = "TheBloke/CodeLlama-34B-Instruct-GPTQ"
-quantization_config = GPTQConfig(bits=8, desc_act=False, act_group_aware=True)
+quantization_config = GPTQConfig(bits=8, desc_act=False, act_group_aware=True, disable_exllama=False)
 llm = AutoModelForCausalLM.from_pretrained(model,
                                            device_map="auto",
                                            dtype=torch.float16,
-                                           trust_remote_code=False,
+                                           trust_remote_code=True,
                                            quantization_config=quantization_config,
                                            revision="gptq-8bit-128g-actorder_True")
-tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
+tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True, trust_remote_code=True)
 
 
 @app.post("/generate")
