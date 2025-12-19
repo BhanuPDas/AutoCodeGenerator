@@ -8,3 +8,4 @@ sentencepiece
 protobuf==4.25.3
 optimum
 gptqmodel
+torchaudio
