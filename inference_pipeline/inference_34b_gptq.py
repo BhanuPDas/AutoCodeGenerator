@@ -46,6 +46,7 @@ def generate_code(request: PromptRequest):
             eos_token_id=tokenizer.eos_token_id,
             min_new_tokens=100,
             max_new_tokens=max_new_tokens,
+            use_cache=True,
         )
 
         gen_ids = outputs[0][inputs["input_ids"].shape[-1]:]
