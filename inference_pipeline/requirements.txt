@@ -8,3 +8,4 @@ sentencepiece
 protobuf==4.25.3
 optimum==1.27.0
 peft==0.18.0
+auto-gptq==0.7.1
