@@ -9,7 +9,8 @@ ENV TRANSFORMERS_NO_TORCHVISION=1
 RUN pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu126
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install gptqmodel --no-build-isolation --no-deps
+#RUN pip install gptqmodel --no-build-isolation --no-deps
+RUN pip install auto-gptq==0.7.1
 ARG HF_TOKEN
 ENV HF_TOKEN=${HF_TOKEN}
 RUN python -c 'from huggingface_hub import login; import os; login(token=os.getenv("HF_TOKEN"))'
