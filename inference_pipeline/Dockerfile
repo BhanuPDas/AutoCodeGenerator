@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https://download.pytorch.org/whl/cu128
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN RUN pip install gptqmodel
+RUN pip install gptqmodel
 ARG HF_TOKEN
 ENV HF_TOKEN=${HF_TOKEN}
 RUN python -c 'from huggingface_hub import login; import os; login(token=os.getenv("HF_TOKEN"))'
