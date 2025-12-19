@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cu124
+RUN pip install --no-cache-dir torch==2.8.1+cu124 torchvision==0.15.2+cu124 torchaudio==2.0.2+cu124 --index-url https://download.pytorch.org/whl/cu124
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 ARG HF_TOKEN
