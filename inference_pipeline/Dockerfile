@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 #RUN pip install --no-cache-dir setuptools==70.0.0 wheel packaging
-RUN pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+RUN pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install -v gptqmodel --no-build-isolation
