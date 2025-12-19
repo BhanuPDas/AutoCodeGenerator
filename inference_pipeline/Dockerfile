@@ -1,5 +1,5 @@
-#FROM python:3.12.8 #For codellama-34B
-FROM python:3.11 #For GPTQ
+#FROM python:3.12.8
+FROM python:3.11
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
