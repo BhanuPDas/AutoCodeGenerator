@@ -34,9 +34,9 @@ def generate_code(request: PromptRequest):
         max_new_tokens = min(512, max(128, remaining_length - 64))
         result = model.generate(formatted_prompt, max_new_tokens=max_new_tokens)[0]
         end = time.perf_counter()
-
+        output_text = model.tokenizer.decode(result, skip_special_tokens=True)
         execution_time = end - start
-        num_tokens = len(result)
+        num_tokens = len(result) - input_length
         tpms = num_tokens / execution_time
 
     finally:
@@ -51,7 +51,7 @@ def generate_code(request: PromptRequest):
     mem_used_avg = sum([s['memory_used_gb'] for s in usage_log]) / len(usage_log)
 
     return PromptResponse(
-        result=result,
+        result=output_text,
         inference_time=round(execution_time, 1),
         token_throughput=round(tpms, 1),
         num_tokens=round(num_tokens, 1),
