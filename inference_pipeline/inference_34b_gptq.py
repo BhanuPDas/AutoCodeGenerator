@@ -8,9 +8,8 @@ from gptqmodel import GPTQModel
 
 app = FastAPI()
 model = GPTQModel.load("TheBloke/CodeLlama-34B-Instruct-GPTQ",
-                       revision="gptq-8bit-128g-actorder_True",
+                       revision="gptq-4bit-64g-actorder_True",
                        device="cuda")
-model.use_triton = False
 
 
 @app.post("/generate")
@@ -35,7 +34,7 @@ def generate_code(request: PromptRequest):
         max_context_length = 4096
         remaining_length = max_context_length - input_length
         max_new_tokens = min(512, max(128, remaining_length - 64))
-        result = model.generate(formatted_prompt, max_new_tokens=max_new_tokens,temperature=0.8,top_p=0.95)[0]
+        result = model.generate(formatted_prompt, max_new_tokens=10)[0]
         end = time.perf_counter()
         output_text = model.tokenizer.decode(result, skip_special_tokens=True)
         execution_time = end - start
