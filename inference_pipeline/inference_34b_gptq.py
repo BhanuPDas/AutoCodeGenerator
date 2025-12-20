@@ -1,4 +1,4 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer, GPTQConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from fastapi import FastAPI
 from prompt_request_model import PromptRequest
 from prompt_response_model import PromptResponse
@@ -12,9 +12,9 @@ model = "TheBloke/CodeLlama-34B-Instruct-GPTQ"
 llm = AutoModelForCausalLM.from_pretrained(model,
                                            device_map="auto",
                                            dtype=torch.float16,
-                                           trust_remote_code=True,
+                                           trust_remote_code=False,
                                            revision="gptq-8bit-128g-actorder_True")
-tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
 
 
 @app.post("/generate")
@@ -46,7 +46,6 @@ def generate_code(request: PromptRequest):
             eos_token_id=tokenizer.eos_token_id,
             min_new_tokens=100,
             max_new_tokens=max_new_tokens,
-            use_cache=True,
         )
 
         gen_ids = outputs[0][inputs["input_ids"].shape[-1]:]
