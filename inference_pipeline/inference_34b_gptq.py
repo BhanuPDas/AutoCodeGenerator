@@ -9,8 +9,8 @@ from gptqmodel import GPTQModel
 app = FastAPI()
 model = GPTQModel.load("TheBloke/CodeLlama-34B-Instruct-GPTQ",
                        revision="gptq-8bit-128g-actorder_True",
-                       device="cuda",
-                       use_triton=False)
+                       device="cuda")
+model.use_triton = False
 
 
 @app.post("/generate")
