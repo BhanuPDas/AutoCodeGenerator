@@ -1,20 +1,13 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer
 from fastapi import FastAPI
 from prompt_request_model import PromptRequest
 from prompt_response_model import PromptResponse
 import time
 import gpu_stats
 import threading
-import torch
+from gptqmodel import GPTQModel
 
 app = FastAPI()
-model = "TheBloke/CodeLlama-34B-Instruct-GPTQ"
-llm = AutoModelForCausalLM.from_pretrained(model,
-                                           device_map="auto",
-                                           dtype=torch.float16,
-                                           trust_remote_code=False,
-                                           revision="gptq-8bit-128g-actorder_True")
-tokenizer = AutoTokenizer.from_pretrained(model, use_fast=True)
+model = GPTQModel.load("TheBloke/CodeLlama-34B-Instruct-GPTQ", revision="gptq-8bit-128g-actorder_True")
 
 
 @app.post("/generate")
@@ -34,29 +27,16 @@ def generate_code(request: PromptRequest):
     try:
         start = time.perf_counter()
         formatted_prompt = f"<s>[INST]\n{request.prompt.strip()}\n[/INST]"
-        inputs = tokenizer(formatted_prompt, return_tensors='pt').to(llm.device)
+        inputs = model.tokenizer(formatted_prompt, return_tensors='pt')
         input_length = inputs["input_ids"].shape[-1]
         max_context_length = 4096
         remaining_length = max_context_length - input_length
         max_new_tokens = min(512, max(128, remaining_length - 64))
-        outputs = llm.generate(
-            **inputs,
-            do_sample=False,
-            num_return_sequences=1,
-            eos_token_id=tokenizer.eos_token_id,
-            min_new_tokens=100,
-            max_new_tokens=max_new_tokens,
-        )
-
-        gen_ids = outputs[0][inputs["input_ids"].shape[-1]:]
-        result = tokenizer.decode(gen_ids, skip_special_tokens=True)
-        if not result.strip():
-            result = tokenizer.decode(outputs[0], skip_special_tokens=True)
+        result = model.generate(formatted_prompt, max_new_tokens=max_new_tokens)[0]
         end = time.perf_counter()
-        del outputs
 
         execution_time = end - start
-        num_tokens = len(result.split())
+        num_tokens = len(result)
         tpms = num_tokens / execution_time
 
     finally:

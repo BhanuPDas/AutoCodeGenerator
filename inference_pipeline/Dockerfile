@@ -5,10 +5,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     curl \
     && rm -rf /var/lib/apt/lists/*
-RUN pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu121
+RUN pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu126
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install auto-gptq --no-build-isolation
+RUN pip install GPTQModel==1.2.3
 ARG HF_TOKEN
 ENV HF_TOKEN=${HF_TOKEN}
 RUN python -c 'from huggingface_hub import login; import os; login(token=os.getenv("HF_TOKEN"))'
