@@ -8,7 +8,7 @@ from gptqmodel import GPTQModel
 
 app = FastAPI()
 model = GPTQModel.load("TheBloke/CodeLlama-34B-Instruct-GPTQ",
-                       revision="gptq-8bit--1g-actorder_True",
+                       revision="gptq-4bit-64g-actorder_True",
                        device="cuda")
 
 
