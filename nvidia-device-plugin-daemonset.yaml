@@ -12,12 +12,11 @@ spec:
       labels:
         name: nvidia-device-plugin
     spec:
-      runtimeClassName: nvidia 
+      runtimeClassName: nvidia
       tolerations:
         - key: nvidia.com/gpu
           operator: Exists
           effect: NoSchedule
-      hostNetwork: true
       containers:
         - name: nvidia-device-plugin
           image: nvcr.io/nvidia/k8s-device-plugin:v0.18.0
