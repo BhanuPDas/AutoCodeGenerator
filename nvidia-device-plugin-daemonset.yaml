@@ -53,3 +53,7 @@ spec:
           hostPath:
             path: /run/nvidia
             type: DirectoryOrCreate
+        - name: nvidia-libs
+          hostPath:
+            path: /usr/lib/x86_64-linux-gnu
+            type: Directory
