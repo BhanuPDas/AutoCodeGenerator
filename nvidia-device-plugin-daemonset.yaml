@@ -21,15 +21,15 @@ spec:
           image: nvcr.io/nvidia/k8s-device-plugin:v0.18.0
           args:
             - "--config-file=/etc/nvidia-device-plugin/config.yaml"
-            - "--device-plugin-path=/var/lib/rancher/k3s/agent/kubelet/device-plugins"
           volumeMounts:
             - name: device-plugin
-              mountPath: /var/lib/rancher/k3s/agent/kubelet/device-plugins
+              mountPath: /var/lib/kubelet/device-plugins
             - name: config
               mountPath: /etc/nvidia-device-plugin
       volumes:
         - name: device-plugin
           hostPath:
+            # k3s kubelet path on host
             path: /var/lib/rancher/k3s/agent/kubelet/device-plugins
             type: DirectoryOrCreate
         - name: config
