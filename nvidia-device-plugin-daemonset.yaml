@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nvidia-device-plugin-daemonset
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      name: nvidia-device-plugin
+  template:
+    metadata:
+      labels:
+        name: nvidia-device-plugin
+    spec:
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      containers:
+        - name: nvidia-device-plugin-ctr
+          image: nvcr.io/nvidia/k8s-device-plugin:v0.18.0
+          args:
+            - "--config-file=/etc/nvidia-device-plugin/config.yaml"
+          volumeMounts:
+            - name: config
+              mountPath: /etc/nvidia-device-plugin
+      volumes:
+        - name: config
+          configMap:
+            name: nvidia-device-plugin-config
