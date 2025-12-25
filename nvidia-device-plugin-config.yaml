@@ -6,6 +6,10 @@ metadata:
 data:
   config.yaml: |
     version: v1
+    flags:
+      deviceDiscoveryStrategy: nvml
+      failOnInitError: true
+      nvidiaDriverRoot: "/"
     sharing:
       timeSlicing:
         renameByDefault: false
