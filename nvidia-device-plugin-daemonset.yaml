@@ -16,16 +16,24 @@ spec:
         - key: nvidia.com/gpu
           operator: Exists
           effect: NoSchedule
+      hostNetwork: true
       containers:
         - name: nvidia-device-plugin
           image: nvcr.io/nvidia/k8s-device-plugin:v0.18.0
           args:
             - "--config-file=/etc/nvidia-device-plugin/config.yaml"
+          securityContext:
+            privileged: true
           volumeMounts:
-            - name: device-plugin
-              mountPath: /var/lib/kubelet/device-plugins
-            - name: config
-              mountPath: /etc/nvidia-device-plugin
+            - mountPath: /var/lib/kubelet/device-plugins
+              name: device-plugin
+            - mountPath: /etc/nvidia-device-plugin
+              name: config
+            - mountPath: /dev
+              name: dev
+            - mountPath: /run/nvidia
+              name: nvidia-run
+              readOnly: true
       volumes:
         - name: device-plugin
           hostPath:
@@ -34,3 +42,10 @@ spec:
         - name: config
           configMap:
             name: nvidia-device-plugin-config
+        - name: dev
+          hostPath:
+            path: /dev
+        - name: nvidia-run
+          hostPath:
+            path: /run/nvidia
+            type: DirectoryOrCreate
