@@ -22,5 +22,5 @@ COPY . .
 EXPOSE 5050
 
 
-CMD ["uvicorn", "inference_13b:app", "--host", "0.0.0.0", "--port", "5050"]
+CMD ["uvicorn", "inference_13b_c1:app", "--host", "0.0.0.0", "--port", "5050"]
 #CMD ["uvicorn", "inference_13b_gptq:app", "--host", "0.0.0.0", "--port", "5050"]

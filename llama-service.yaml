@@ -5,7 +5,7 @@ metadata:
   labels:
     app: llama-inference
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: llama-inference
@@ -15,18 +15,17 @@ spec:
         app: llama-inference
     spec:
       containers:
-        - name: llama-inference
-          image: bhanupdas/llama-inference:latest
-          imagePullPolicy: Always
+        - name: llama-infer
+          image: llama-inference:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 5050
-          env:
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
-      imagePullSecrets: 
-        - name: regcred
+          envFrom:
+            - secretRef:
+                name: llama-secret
+          resources:
+            limits:
+              nvidia.com/gpu: 1
 ---
 apiVersion: v1
 kind: Service
