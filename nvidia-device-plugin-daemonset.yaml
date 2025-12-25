@@ -12,6 +12,7 @@ spec:
       labels:
         name: nvidia-device-plugin
     spec:
+      runtimeClassName: nvidia 
       tolerations:
         - key: nvidia.com/gpu
           operator: Exists
@@ -33,6 +34,9 @@ spec:
               name: dev
             - mountPath: /run/nvidia
               name: nvidia-run
+              readOnly: true
+            - mountPath: /usr/lib/x86_64-linux-gnu
+              name: nvidia-libs
               readOnly: true
       volumes:
         - name: device-plugin
