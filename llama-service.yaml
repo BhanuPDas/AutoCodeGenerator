@@ -26,6 +26,10 @@ spec:
           resources:
             limits:
               nvidia.com/gpu: 1
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
 ---
 apiVersion: v1
 kind: Service

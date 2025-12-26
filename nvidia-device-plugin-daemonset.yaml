@@ -6,53 +6,40 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: nvidia-device-plugin
+      name: nvidia-device-plugin-ds
+  updateStrategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
-        name: nvidia-device-plugin
+        name: nvidia-device-plugin-ds
     spec:
-      runtimeClassName: nvidia
       tolerations:
-        - key: nvidia.com/gpu
-          operator: Exists
-          effect: NoSchedule
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
+      priorityClassName: system-node-critical
       containers:
-        - name: nvidia-device-plugin
-          image: nvcr.io/nvidia/k8s-device-plugin:v0.18.0
-          args:
-            - "--config-file=/etc/nvidia-device-plugin/config.yaml"
-          securityContext:
-            privileged: true
-          volumeMounts:
-            - mountPath: /var/lib/kubelet/device-plugins
-              name: device-plugin
-            - mountPath: /etc/nvidia-device-plugin
-              name: config
-            - mountPath: /dev
-              name: dev
-            - mountPath: /run/nvidia
-              name: nvidia-run
-              readOnly: true
-            - mountPath: /usr/lib/x86_64-linux-gnu
-              name: nvidia-libs
-              readOnly: true
-      volumes:
+      - name: nvidia-device-plugin-ctr
+        image: nvcr.io/nvidia/k8s-device-plugin:v0.17.1
+        args:
+          - "--config-file=/etc/nvidia-device-plugin/config.yaml"
+        env:
+          - name: FAIL_ON_INIT_ERROR
+            value: "false"
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+        volumeMounts:
         - name: device-plugin
-          hostPath:
-            path: /var/lib/rancher/k3s/agent/kubelet/device-plugins
-            type: DirectoryOrCreate
+          mountPath: /var/lib/kubelet/device-plugins
         - name: config
-          configMap:
-            name: nvidia-device-plugin-config
-        - name: dev
-          hostPath:
-            path: /dev
-        - name: nvidia-run
-          hostPath:
-            path: /run/nvidia
-            type: DirectoryOrCreate
-        - name: nvidia-libs
-          hostPath:
-            path: /usr/lib/x86_64-linux-gnu
-            type: Directory
+          mountPath: /etc/nvidia-device-plugin
+      volumes:
+      - name: device-plugin
+        hostPath:
+          path: /var/lib/kubelet/device-plugins
+      - name: config
+        configMap:
+          name: nvidia-device-plugin-config
