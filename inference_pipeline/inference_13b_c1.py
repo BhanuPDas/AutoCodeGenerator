@@ -42,7 +42,7 @@ def generate_code(request: PromptRequest):
         remaining_length = max_context_length - input_length
         max_new_tokens = min(512, max(128, remaining_length - 64))
 
-        with torch.no_grad:
+        with torch.no_grad():
             outputs = llm.generate(
                 **inputs,
                 do_sample=True,
