@@ -8,6 +8,7 @@
 #protobuf==4.25.3
 #optimum==1.27.0
 #peft==0.18.0
+#redis
 
 fastapi
 uvicorn
@@ -20,3 +21,4 @@ peft==0.10.0
 sentencepiece
 protobuf==4.25.3
 nvidia-ml-py
+redis
