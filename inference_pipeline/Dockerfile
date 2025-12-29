@@ -23,4 +23,4 @@ EXPOSE 5050
 
 
 #CMD ["uvicorn", "inference_13b_c2:app", "--host", "0.0.0.0", "--port", "5050"]
-CMD ["uvicorn", "inference_13b_gptq_c3:app", "--host", "0.0.0.0", "--port", "5050"]
+CMD ["uvicorn", "inference_13b_gptq_c4:app", "--host", "0.0.0.0", "--port", "5050"]

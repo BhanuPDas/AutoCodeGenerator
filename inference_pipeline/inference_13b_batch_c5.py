@@ -8,6 +8,8 @@ from prompt_request_model import PromptRequest
 from prompt_response_model import PromptResponse
 import gpu_stats
 import asyncio
+import redis
+import hashlib
 
 app = FastAPI()
 
@@ -20,6 +22,7 @@ llm = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
     low_cpu_mem_usage=True,
 )
+rd = redis.Redis(host='172.17.0.1', port=6379, decode_responses=True)
 
 # ----------------------------
 # GLOBAL BATCH QUEUE
