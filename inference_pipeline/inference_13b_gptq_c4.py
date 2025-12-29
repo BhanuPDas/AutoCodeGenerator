@@ -29,7 +29,7 @@ def generate_code(request: PromptRequest):
             time.sleep(interval)
 
     try:
-        cache_key = gen_hash_key(request.prompt.strip())
+        cache_key = f"llm:{gen_hash_key(request.prompt.strip())}"
         start = time.perf_counter()
         formatted_prompt = f"<s>[INST]\n{request.prompt.strip()}\n[/INST]"
         inputs = model.tokenizer(formatted_prompt, return_tensors='pt')
