@@ -73,7 +73,8 @@ def batch_worker():
                 break
 
         prompts = [f"<s>[INST]\n{item.request.prompt.strip()}\n[/INST]" for item in items]
-
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
         inputs = tokenizer(prompts, return_tensors="pt", padding=True).to(llm.device)
         input_lengths = (inputs["input_ids"] != tokenizer.pad_token_id).sum(dim=1)
 
