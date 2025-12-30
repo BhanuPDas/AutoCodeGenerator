@@ -31,7 +31,7 @@ def cache_key(prompt: str) -> str:
     payload = f"{prompt.strip()}"
     return CACHE_PREFIX + hashlib.sha256(payload.encode()).hexdigest()
 
-BATCH_SIZE = 4
+BATCH_SIZE = 6
 REQUEST_QUEUE: queue.Queue = queue.Queue()
 SHUTDOWN = False
 
